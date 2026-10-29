@@ -1,0 +1,41 @@
+name: Atualizar Radar da Esplanada
+
+on:
+  schedule:
+    - cron: '0,30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizacao-radar
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Baixar arquivos do Radar
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar bibliotecas
+        run: pip install pandas requests feedparser
+
+      - name: Coletar noticias
+        run: python coletar_noticias.py
+
+      - name: Salvar atualizacao
+        run: |
+          git config user.name "Radar da Esplanada"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add noticias_coletadas.csv
+          git diff --cached --quiet || git commit -m "Atualizacao automatica do Radar"
+          git push
