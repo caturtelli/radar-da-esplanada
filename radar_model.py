@@ -1,5 +1,6 @@
 """Visão derivada: nunca grava nem substitui o histórico ou a curadoria."""
 from pathlib import Path
+from functools import lru_cache
 import pandas as pd
 from classificar_noticias import associate
 from identificar_nomes import registry, find_people, status_from_title, person_context
@@ -49,6 +50,7 @@ def build_index(collected, curated, catalog):
         row['grupo_republicacao'] = hashlib.sha256(title_key.encode()).hexdigest()[:16] if titles[title_key] > 1 else ''
     return result
 
+@lru_cache(maxsize=20000)
 def timestamp(value):
     return pd.to_datetime(value, errors='coerce', utc=True)
 

@@ -119,3 +119,9 @@ def test_policy_topics_are_not_people():
     assert 'Defesa de Lula' not in candidates
     assert 'Saúde de Lula' not in candidates
     assert 'Carlos Fávaro' in candidates
+
+
+def test_byline_is_not_candidate():
+    title='Mônica Bergamo: Lula avalia nome para Ministério da Saúde'
+    assert status_from_title(title,'Mônica Bergamo',['Mônica Bergamo'])=='Menção'
+    assert 'Busca Retorno' not in registry(['Lula Busca Retorno de aliados'])
