@@ -4,6 +4,16 @@ from pathlib import Path
 from urllib.parse import urlparse
 import pandas as pd
 import streamlit as st
+# Cloud sessions may retain imported modules across a repository update.
+# Reload the analysis modules once when their deployed engine version changes.
+import importlib
+import identificar_nomes as name_engine
+import classificar_noticias as organ_engine
+import radar_model as radar_engine
+if getattr(name_engine, 'ENGINE_VERSION', None) != '2.1.1':
+    importlib.reload(organ_engine)
+    importlib.reload(name_engine)
+    importlib.reload(radar_engine)
 from radar_model import read_csv, build_index, filter_rows, is_recent, STATUSES
 from identificar_nomes import norm
 
@@ -26,6 +36,10 @@ h1,h2,h3 {color:#16334b;letter-spacing:-.025em}
 .stButton button,.stLinkButton a {border-radius:8px}
 </style>''', unsafe_allow_html=True)
 
+st.caption('BRASÍLIA / MONITORAMENTO JORNALÍSTICO')
+st.title('Radar da Esplanada')
+st.write('Acompanhe os nomes e as notícias de cada ministério. Escolha um cartão para começar.')
+
 @st.cache_data(ttl=60)
 def load_data(signature):
     curated = read_csv(BASE,'indicacoes.csv')
@@ -42,9 +56,6 @@ except (OSError, ValueError, AttributeError) as exc:
 if catalog.empty:
     st.error('Catálogo de órgãos não encontrado.'); st.stop()
 
-st.caption('BRASÍLIA / MONITORAMENTO JORNALÍSTICO')
-st.title('Radar da Esplanada')
-st.write('Acompanhe os nomes e as notícias de cada ministério. Escolha um cartão para começar.')
 try:
     status = json.loads((BASE/'status_coleta.json').read_text())
 except (OSError, ValueError):

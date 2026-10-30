@@ -4,6 +4,9 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from streamlit.testing.v1 import AppTest
 
 def test_home_cards_and_round_trip():
+    import identificar_nomes
+    if hasattr(identificar_nomes,'ENGINE_VERSION'):
+        del identificar_nomes.ENGINE_VERSION
     app=AppTest.from_file(str(Path(__file__).resolve().parents[1]/'app.py'),default_timeout=120).run()
     assert not app.exception
     assert app.radio[0].value=='Ministérios e órgãos'
