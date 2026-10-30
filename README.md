@@ -71,3 +71,21 @@ O reconhecimento agora filtra expressões institucionais e cabeçalhos, separa c
 pessoas quando há nomes explícitos e não transforma o cliente de um advogado no candidato ao cargo.
 Os cartões destacam vínculos com indícios de movimentação; simples menções permanecem nas reportagens.
 Ainda pode haver falsos positivos/negativos; não se deduzem nomes ausentes nem confirmações oficiais.
+
+
+## Navegação por URL e histórico do navegador
+
+A URL é a fonte de verdade das telas, não o último órgão guardado na sessão. Exemplos de rotas relativas:
+
+- `?orgao=fazenda`: Ministério da Fazenda.
+- `?pessoa=rafael-fonteles`: ficha de Rafael Fonteles.
+- `?tela=noticias&pagina=2`: segunda página de reportagens.
+- `?categoria=todos`: grade dos 79 órgãos.
+
+`navigation.py` valida e converte rotas em nomes do catálogo. Slugs removem acentos, usam nomes legíveis e tratam colisões de forma determinística. Identificadores inexistentes apresentam mensagem e seleção segura. Parâmetros externos, como UTM, são preservados.
+
+Callbacks atualizam `st.query_params` uma única vez por ação. A tela lê a URL em cada execução, inclusive nas mudanças recebidas pelo histórico nativo do Streamlit (Voltar/Avançar). Reruns comuns e filtros não reescrevem a rota. Não há JavaScript injetado, acesso à janela pai, nova dependência ou domínio fixo. A implementação foi testada com Streamlit 1.66.1, cuja navegação nativa utiliza pushState e responde a popstate.
+
+Os filtros de busca, veículos, natureza e período continuam pertencendo à sessão: o link compartilha o órgão/pessoa/página, não os filtros do remetente. A categoria da grade é mantida ao abrir e voltar de uma pasta. A aba Pessoas começa pela seleção de um nome, e a seleção abre uma ficha com endereço próprio.
+
+Validação: 20 testes aprovados, incluindo regressões anteriores e testes de rota, query params restaurados para simular Voltar/Avançar, recarga em nova sessão, paginação e URLs inválidas. A verificação dos botões reais do navegador no ambiente publicado deve ocorrer após autorização de publicação. Não foram alterados dados, classificação, coleta ou workflows.

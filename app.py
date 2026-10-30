@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 from urllib.parse import urlparse
+from dataclasses import replace
+from navigation import Route, decode_route, route_params
 import pandas as pd
 import streamlit as st
 # Cloud sessions may retain imported modules across a repository update.
@@ -66,9 +68,30 @@ if pd.notna(when):
 if pd.notna(when) and pd.Timestamp.now(tz='UTC')-when > pd.Timedelta(hours=1): st.warning('A última coleta registrada tem mais de uma hora. A atualização pode estar atrasada.')
 if status.get('falhas'): st.warning('A última coleta registrou falhas. Parte das fontes pode estar desatualizada.')
 
-if st.session_state.get('pending_view'):
-    st.session_state.radar_view=st.session_state.pop('pending_view')
-view = st.radio('Navegar pelo Radar',['Ministérios e órgãos','Pessoas','Últimas movimentações','Todas as notícias','Cadastro editorial'],horizontal=True,label_visibility='collapsed',key='radar_view')
+all_people=sorted(set(curated.get('nome', [])) | {p for r in rows for p in r['pessoas']})
+org_names=catalog.orgao.tolist()
+route,route_warning=decode_route(st.query_params.to_dict(),org_names,all_people)
+if route_warning: st.info(route_warning)
+
+def navigate(target):
+    # One atomic change creates one browser-history entry. Reruns do not write URLs.
+    params=route_params(target,org_names,all_people,st.query_params.to_dict())
+    if params!=st.query_params.to_dict(): st.query_params.from_dict(params)
+
+def change_view():
+    navigate(Route(view=st.session_state.radar_view))
+
+def change_person():
+    navigate(Route(view='Pessoas',person=st.session_state.person_choice,category=route.category))
+
+def change_category():
+    navigate(Route(category=st.session_state.org_category))
+
+# Read URL on every run, including browser Back/Forward and shared deep links.
+# Updating widget state before construction also clears stale details from the prior route.
+st.session_state.radar_view=route.view
+st.session_state.selected_org=route.org
+view=st.radio('Navegar pelo Radar',['Ministérios e órgãos','Pessoas','Últimas movimentações','Todas as notícias','Cadastro editorial'],horizontal=True,label_visibility='collapsed',key='radar_view',on_change=change_view)
 with st.sidebar:
     st.header('Buscar e filtrar')
     query = st.text_input('Buscar pessoa, órgão ou notícia', placeholder='Nome, sobrenome ou palavra-chave')
@@ -126,7 +149,9 @@ def article(row, person=None):
 def articles(items, person=None, key='news'):
     if not items: st.info('Nenhuma notícia encontrada com estes filtros.'); return
     pages=max(1,(len(items)+19)//20)
-    page=st.number_input('Página de reportagens',min_value=1,max_value=pages,value=1,key=key)
+    st.session_state[key]=min(route.page,pages)
+    def change_page(): navigate(replace(route,page=int(st.session_state[key])))
+    page=st.number_input('Página de reportagens',min_value=1,max_value=pages,key=key,on_change=change_page)
     st.caption(f'{len(items)} reportagem(ns) · página {page} de {pages}')
     for row in items[(page-1)*20:page*20]: article(row,person)
 
@@ -151,26 +176,29 @@ elif view=='Todas as notícias':
     articles(filtered)
 elif view=='Pessoas':
     available=sorted({p for r in filtered for p in r['pessoas']} | {p for p in curated.get('nome',[]) if not query or norm(query) in norm(p)})
+    target=route.person
+    if target and target not in available:
+        available=sorted(set(available)|{target})
+        st.caption('A ficha foi aberta pelo endereço; os filtros atuais podem limitar suas reportagens.')
     if not available: st.info('Nenhuma pessoa encontrada.')
     else:
-        target=st.session_state.pop('person_target',None)
-        if target in available: st.session_state.person_choice=target
-        if st.session_state.get('person_choice') not in available: st.session_state.person_choice=available[0]
-        person=st.selectbox('Selecionar pessoa',available,key='person_choice')
-        st.subheader(person)
-        related=[r for r in filtered if person in r['pessoas']]
-        st.caption(f'{len(related)} reportagem(ns) nos filtros atuais · {len({r.get("veiculo") for r in related})} veículo(s); veículos distintos não significam confirmações independentes.')
-        st.markdown('#### Registros editoriais')
-        editorial(curated[curated.nome==person])
-        st.markdown('#### Histórico de reportagens')
-        st.caption('Sequência de relatos publicados; diferenças entre manchetes são indícios para revisão, não mudanças confirmadas na situação.')
-        articles(related,person,'person_news')
+        st.session_state.person_choice=target if target in available else None
+        person=st.selectbox('Selecionar pessoa',available,index=None,placeholder='Escolha uma pessoa',key='person_choice',on_change=change_person)
+        if person is None:
+            st.info('Selecione uma pessoa para abrir sua ficha e obter um link direto.')
+        else:
+            st.subheader(person)
+            related=[r for r in filtered if person in r['pessoas']]
+            st.caption(f'{len(related)} reportagem(ns) nos filtros atuais · {len({r.get("veiculo") for r in related})} veículo(s); veículos distintos não significam confirmações independentes.')
+            st.markdown('#### Registros editoriais')
+            editorial(curated[curated.nome==person])
+            st.markdown('#### Histórico de reportagens')
+            st.caption('Sequência de relatos publicados; diferenças entre manchetes são indícios para revisão, não mudanças confirmadas na situação.')
+            articles(related,person,'person_news')
 elif view=='Ministérios e órgãos':
     selected = st.session_state.get('selected_org')
     if selected:
-        if st.button('← Voltar aos ministérios',key='back_org'):
-            st.session_state.selected_org=None
-            st.rerun()
+        st.button('← Voltar aos ministérios',key='back_org',on_click=navigate,args=(Route(category=route.category),))
         org=selected
         st.subheader(org)
         related=[r for r in filtered if org in r['orgaos']]
@@ -189,10 +217,7 @@ elif view=='Ministérios e órgãos':
                     st.markdown('#### '+person)
                     situations=sorted({r['estados'].get(person,'Menção') for r in items})
                     st.caption(' · '.join(situations) if situations else 'Registro editorial')
-                    if st.button('Abrir ficha de '+person,key='org_person_'+person):
-                        st.session_state.person_target=person
-                        st.session_state.pending_view='Pessoas'
-                        st.rerun()
+                    st.button('Abrir ficha de '+person,key='org_person_'+person,on_click=navigate,args=(Route(view='Pessoas',person=person,category=route.category),))
                     if items:
                         latest=items[0]
                         st.write(latest.get('titulo',''))
@@ -205,7 +230,8 @@ elif view=='Ministérios e órgãos':
     else:
         st.subheader('Escolha um ministério ou órgão')
         st.caption('Clique no nome do cartão para ver pessoas, movimentações e fontes.')
-        category=st.radio('Mostrar',['Ministérios','Órgãos centrais','Entidades','Todos os 79 órgãos'],horizontal=True,key='org_category')
+        st.session_state.org_category=route.category
+        category=st.radio('Mostrar',['Ministérios','Órgãos centrais','Entidades','Todos os 79 órgãos'],horizontal=True,key='org_category',on_change=change_category)
         choices=catalog.copy()
         if category=='Ministérios': choices=choices[choices.categoria=='Ministério']
         elif category=='Órgãos centrais': choices=choices[choices.categoria=='Presidência e órgãos centrais']
@@ -224,9 +250,7 @@ elif view=='Ministérios e órgãos':
                 names=summaries[org]
                 label=org.replace('Ministério da ','').replace('Ministério das ','').replace('Ministério do ','').replace('Ministério dos ','').replace('Ministério de ','')
                 with col.container(border=True):
-                    if st.button(label+' →',key='open_org_'+org,use_container_width=True):
-                        st.session_state.selected_org=org
-                        st.rerun()
+                    st.button(label+' →',key='open_org_'+org,use_container_width=True,on_click=navigate,args=(Route(org=org,category=route.category),))
                     st.caption(f'{len(names)} pessoa(s) · {len(related)} reportagem(ns)')
                     if names: st.write(' · '.join(list(names)[:3])+(' …' if len(names)>3 else ''))
                     else: st.caption('Nenhum nome identificado neste recorte')
@@ -247,3 +271,4 @@ else:
 st.divider()
 st.caption('Cobertura por RSS: pode haver lacunas. Sem notícia encontrada não significa ausência de negociação.')
 st.caption('Triagem automática revisável · fontes originais preservadas · sem pontuação automática de credibilidade ou probabilidade de nomeação.')
+
