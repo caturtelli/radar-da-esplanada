@@ -4,6 +4,8 @@ import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 
+ENGINE_VERSION = '2.1.1'
+
 SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
          'Margareth Menezes', 'Pierpaolo Bottini', 'Luiz Marinho', 'André Janones',
          'João Campos', 'Fátima Bezerra', 'Lincoln Gakiya', 'Fernando Haddad',
