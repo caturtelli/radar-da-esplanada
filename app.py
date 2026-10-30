@@ -41,7 +41,7 @@ st.title('Radar da Esplanada')
 st.write('Acompanhe os nomes e as notícias de cada ministério. Escolha um cartão para começar.')
 
 @st.cache_data(ttl=60)
-def load_data(signature):
+def load_data(signature, engine_version):
     curated = read_csv(BASE,'indicacoes.csv')
     sources = read_csv(BASE,'noticias.csv')
     catalog = read_csv(BASE,'catalogo_orgaos.csv')
@@ -50,7 +50,7 @@ def load_data(signature):
 
 files = ['indicacoes.csv','noticias.csv','catalogo_orgaos.csv','noticias_coletadas.csv']
 try:
-    curated, sources, catalog, rows = load_data(tuple((BASE/f).stat().st_mtime_ns if (BASE/f).exists() else 0 for f in files))
+    curated, sources, catalog, rows = load_data(tuple((BASE/f).stat().st_mtime_ns if (BASE/f).exists() else 0 for f in files), name_engine.ENGINE_VERSION)
 except (OSError, ValueError, AttributeError) as exc:
     st.error(f'Não foi possível carregar o radar: {exc}'); st.stop()
 if catalog.empty:
