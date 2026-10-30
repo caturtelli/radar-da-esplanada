@@ -54,3 +54,15 @@ def test_real_history_read_only():
     rows=build_index(read_csv(BASE,'noticias_coletadas.csv'),read_csv(BASE,'indicacoes.csv'),read_csv(BASE,'catalogo_orgaos.csv'))
     assert rows
     assert all(p.read_bytes()==data for p,data in before.items())
+
+
+def test_real_headline_and_generic_alias_regression():
+    known=registry(['Para Giannetti, economia deve mudar', 'Aguinaldo Ribeiro é cotado para assumir Ministério de Portos e Aeroportos'])
+    title='Aguinaldo Ribeiro é cotado para assumir Ministério de Portos e Aeroportos - Portal BE News'
+    assert find_people(title,known)==['Aguinaldo Ribeiro']
+    assert status_from_title(title,'Aguinaldo Ribeiro',known)=='Especulação'
+    catalog=read_csv(BASE,'catalogo_orgaos.csv')
+    row=build_index(pd.DataFrame([{'titulo':title}]),pd.DataFrame(),catalog)[0]
+    assert row['vinculos']['Aguinaldo Ribeiro']==['Ministério de Portos e Aeroportos']
+    assert 'Para Giannetti' not in known
+    assert 'Paulo Silva' in registry(['Paulo Silva é cotado para Anvisa'])
