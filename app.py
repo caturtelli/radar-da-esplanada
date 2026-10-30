@@ -23,26 +23,11 @@ from identificar_nomes import norm
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
 install_history_bridge()
 BASE = Path(__file__).resolve().parent
-st.markdown('''<style>
-.stApp {background:#f4f6fa}
-.block-container {max-width:1320px;padding-top:2.5rem;padding-bottom:3rem}
-html,body,[class*=css] {font-family:Arial,sans-serif}
-[data-testid=stSidebar] {min-width:280px;max-width:300px}
-[data-testid=stMain] .stButton button {min-height:48px;text-align:left;font-size:1rem;border-color:#cad8e4}
-[data-testid=stMain] .stButton button:hover {border-color:#147d92;color:#126c80;background:#edf8fa}
-[data-testid=stVerticalBlockBorderWrapper] {border-radius:14px}
-[data-testid=stMetricLabel] {font-size:.9rem}
-.stCaption {color:#536778}
-[data-testid=stRadio] label {font-size:1rem}
-h1,h2,h3 {color:#16334b;letter-spacing:-.025em}
-[data-testid="stMetric"] {background:white;border:1px solid #dce4eb;border-radius:12px;padding:18px}
-[data-testid="stSidebar"] {background:#eaf0f5}
-.stButton button,.stLinkButton a {border-radius:8px}
-</style>''', unsafe_allow_html=True)
+st.markdown('<style>'+ (BASE/'visual.css').read_text(encoding='utf-8') +'</style>', unsafe_allow_html=True)
 
-st.caption('BRASÍLIA / MONITORAMENTO JORNALÍSTICO')
+st.markdown('<div class="radar-masthead">BRASÍLIA · POLÍTICA · FONTES</div>', unsafe_allow_html=True)
 st.title('Radar da Esplanada')
-st.write('Acompanhe os nomes e as notícias de cada ministério. Escolha um cartão para começar.')
+st.write('Quem está no radar do governo. Explore ministérios, acompanhe pessoas e consulte as fontes.')
 
 @st.cache_data(ttl=60)
 def load_data(signature, engine_version):
@@ -115,14 +100,6 @@ b.metric('Pessoas identificadas',len(people))
 c.metric('Notícias no histórico',len(rows))
 d.metric('Publicadas em 24h',sum(is_recent(r) for r in rows))
 st.divider()
-coverage_path=BASE/'cobertura_historica.json'
-if coverage_path.exists():
-    try:
-        coverage=json.loads(coverage_path.read_text())
-        stamp=pd.to_datetime(coverage.get('executado_em'),errors='coerce',utc=True)
-        stamp_text=stamp.tz_convert('America/Sao_Paulo').strftime('%d/%m às %H:%M') if pd.notna(stamp) else 'data não informada'
-        st.caption(f'Histórico ampliado em {stamp_text}: {coverage.get("orgaos_consultados",0)} órgãos consultados · período {coverage.get("inicio","")} a {coverage.get("fim","")} · {coverage.get("novas",0)} reportagens acrescentadas. Cobertura sujeita a lacunas do RSS.')
-    except (OSError,ValueError): pass
 
 def valid_url(url):
     try:
@@ -270,8 +247,17 @@ else:
         return 'A classificar'
     data['escalao']=data.apply(lambda r:r.get('escalao','') or level(r.cargo),axis=1)
     editorial(data[data.escalao.isin(levels)])
+coverage_path=BASE/'cobertura_historica.json'
+if coverage_path.exists():
+    try:
+        coverage=json.loads(coverage_path.read_text())
+        stamp=pd.to_datetime(coverage.get('executado_em'),errors='coerce',utc=True)
+        stamp_text=stamp.tz_convert('America/Sao_Paulo').strftime('%d/%m às %H:%M') if pd.notna(stamp) else 'data não informada'
+        st.caption(f'Histórico ampliado em {stamp_text}: {coverage.get("orgaos_consultados",0)} órgãos consultados · período {coverage.get("inicio","")} a {coverage.get("fim","")} · {coverage.get("novas",0)} reportagens acrescentadas. Cobertura sujeita a lacunas do RSS.')
+    except (OSError,ValueError): pass
+
 st.divider()
 st.caption('Cobertura por RSS: pode haver lacunas. Sem notícia encontrada não significa ausência de negociação.')
 st.caption('Triagem automática revisável · fontes originais preservadas · sem pontuação automática de credibilidade ou probabilidade de nomeação.')
 
-st.markdown('**Desenvolvido por Camila Tereza.**  \nQuer falar comigo? Me escreve: [caturtelli@gmail.com](mailto:caturtelli@gmail.com)')
+st.markdown('<div class="radar-footer"><strong>Desenvolvido por Camila Tereza.</strong><br>Quer falar comigo? Me escreve: <a href="mailto:caturtelli@gmail.com">caturtelli@gmail.com</a></div>', unsafe_allow_html=True)
