@@ -53,12 +53,20 @@ def associate(title, catalog_names):
     """Todos os órgãos participam; vínculo administrativo não transfere indicação."""
     t = norm(title)
     found = []
+    # A hypothetical new Security ministry must not be folded into Justice.
+    hypothetical_security = ('ministerio da seguranca' in t or 'ministerio de seguranca' in t) and 'ministerio da justica' not in t
+
     for org in sorted(set(catalog_names)):
+        if hypothetical_security and org == 'Ministério da Justiça e Segurança Pública':
+            continue
         official = norm(org)
         patterns = [r'(?<!\w)' + re.escape(official) + r'(?!\w)']
         if official.startswith('ministerio '):
             short = re.sub(r'^ministerio (?:da |das |do |dos |de )?', '', official)
-            patterns.append(r'(?<!\w)' + re.escape(short) + r'(?!\w)')
+            if len(short.split()) > 1:
+                patterns.append(r'(?<!\w)' + re.escape(short) + r'(?!\w)')
+            elif MOVEMENT.search(t):
+                patterns.append(r'(?:para|na|a|da|do)\s+(?:a |o |chefiar |comandar |assumir |ministr[oa] d[ao] )?'+re.escape(short)+r'(?!\w)')
         # Curtos e siglas exigem grafia exata; evita ANS dentro de palavras.
         if len(org) <= 6 and org.isupper():
             matched = bool(re.search(r'(?<!\w)' + re.escape(org) + r'(?!\w)', str(title)))
@@ -67,6 +75,9 @@ def associate(title, catalog_names):
         # Aliases editoriais com palavras genéricas só em contexto de movimentação.
         if not matched and MOVEMENT.search(t):
             matched = any(re.search(p,t) for p in ALIASES.get(org, []))
+            if matched and org in {'Ministério da Defesa','Ministério da Saúde','Ministério da Cultura','Ministério da Fazenda'}:
+                short={'Ministério da Defesa':'defesa','Ministério da Saúde':'saude','Ministério da Cultura':'cultura','Ministério da Fazenda':'fazenda'}[org]
+                matched=bool(re.search(r'(?:para|na|a|da|do)\s+(?:a |o |chefiar |comandar |assumir |ministr[oa] d[ao] )?'+short+r'\b',t))
         if matched:
             found.append(org)
     return found
