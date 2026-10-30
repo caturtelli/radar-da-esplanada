@@ -1,85 +1,86 @@
-"""Triagem de nomes em manchetes; nunca confirma nomeação ou convite.
-Não lê conteúdo integral das reportagens. Revise todas as associações.
-"""
+"""Identificação conservadora em manchetes, sem inferir identidade ambígua."""
 import re
 import unicodedata
 from collections import defaultdict
+from functools import lru_cache
 
-# Nomes completos efetivamente observados nas manchetes da amostra inicial.
-# Pode-se ampliar esta lista após revisão editorial; não se inferem identidades por sobrenome.
-SEEDS = [
-    "Rafael Fonteles", "Camilo Santana", "Simone Tebet", "Wagner Moura",
-    "Margareth Menezes", "Pierpaolo Bottini", "Luiz Marinho",
-    "André Janones", "João Campos", "Fátima Bezerra",
-    "Lincoln Gakiya", "Fernando Haddad", "Renan Filho",
-    "Geraldo Alckmin", "Rui Costa", "Paulo Paim",
-    "Rodrigo Pacheco", "Gleisi Hoffmann", "Márcio Tavares",
-]
-EXCLUDE = {
-    "lula", "luiz inacio lula da silva", "flavio bolsonaro", "jair bolsonaro",
-    "governo lula", "ministerio da fazenda", "ministerio da cultura",
-    "ministerio da justica", "casa civil", "stf", "supremo tribunal federal",
-}
-MOVES = re.compile(
-    r"\b(cotad[oa]s?|nomead[oa]s?|nomeac(?:ao|oes)|indicad[oa]s?|"
-    r"indicac(?:ao|oes)|assumir|assumira|comandar|chefia|"
-    r"convite|convidad[oa]s?|ganha forca|favorit[oa]s?|"
-    r"escolh|novo ministro|nova ministra|pode ser ministro|"
-    r"para (?:a |o )?(?:fazenda|cultura|justica|casa civil|defesa|itamaraty)|"
-    r"ministerio|chanceler)\b", re.I
-)
-NEGATION = re.compile(
-    r"\b(nega|negou|nega ter|descarta|descartou|recusa|recusou|"
-    r"nao recebeu|nao houve|nao tratou|desmente|desmentiu)\b", re.I
-)
-# Suficientemente restrito para não captar nomes de veículos.
-NAME = re.compile(
-    r"(?<![\w])([A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+"
-    r"(?:\s+(?:de|da|do|dos|das))?"
-    r"\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+"
-    r"(?:\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+)?)"
-)
+SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
+         'Margareth Menezes', 'Pierpaolo Bottini', 'Luiz Marinho', 'André Janones',
+         'João Campos', 'Fátima Bezerra', 'Lincoln Gakiya', 'Fernando Haddad',
+         'Renan Filho', 'Geraldo Alckmin', 'Rui Costa', 'Paulo Paim',
+         'Rodrigo Pacheco', 'Gleisi Hoffmann', 'Márcio Tavares']
+NAME = re.compile(r'\b[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+(?:\s+(?:(?:de|da|do|dos|das)\s+)?[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+){1,4}\b')
+BLOCK = {'ministerio','secretaria','banco','governo','federal','republica','civil',
+         'brasil','supremo','tribunal','publica','congresso','camara','senado',
+         'folha','globo','estado','paulo','news','justica','seguranca'}
 
+@lru_cache(maxsize=20000)
 def norm(t):
-    t = unicodedata.normalize('NFKD',str(t or '').casefold())
-    return ''.join(c for c in t if not unicodedata.combining(c))
+    return ''.join(c for c in unicodedata.normalize('NFKD', str(t or '').casefold()) if not unicodedata.combining(c))
 
-def status_from_title(title):
-    t = norm(title)
-    if NEGATION.search(t):
-        return "Há negativa na manchete"
-    if re.search(r"\b(foi nomead[oa]|nomeacao confirmada|nomeou|anunciou a nomeacao)\b",t):
-        return "Manchete relata nomeação — verificar fonte oficial"
-    return "Menção em contexto de possível indicação — não verificada"
+def contains(text, phrase):
+    return bool(re.search(r'(?<!\w)' + re.escape(norm(phrase)) + r'(?!\w)', norm(text)))
+
+def discover(title):
+    return [m.group() for m in NAME.finditer(str(title).split(' - ')[0])
+            if not set(norm(m.group()).split()) & BLOCK]
+
+def registry(titles, registered=()):
+    # Full forms across the entire corpus are resolved before single surnames.
+    names = list(SEEDS) + list(registered)
+    for title in titles:
+        names.extend(discover(title))
+    unique = {norm(n): n for n in names if len(str(n).split()) >= 2}
+    # A shorter full form is an alias only when it has exactly one longer match.
+    for key in list(unique):
+        longer = [k for k in unique if k != key and k.startswith(key + ' ')]
+        if len(longer) == 1:
+            del unique[key]
+    return sorted(unique.values())
 
 def find_people(title, registered=()):
-    t = str(title or '').split(' - ')[0]
-    nt = norm(t)
-    if not MOVES.search(nt):
-        return []
-    names = set()
-    for name in list(SEEDS) + list(registered):
-        if len(name.split()) < 2:
-            continue
-        if re.search(r'(?<!\w)' + re.escape(norm(name)) + r'(?!\w)', nt):
-            names.add(name)
-    # Extração conservadora de novos nomes: apenas em construções fortes.
-    patterns = [
-        r"(?:nome de|cotad[oa]\s+para|convidar|indicar)\s+([A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][\wáàâãéêíóôõúç]+\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][\wáàâãéêíóôõúç]+)",
-        r"([A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+)\s+(?:e\s+|é\s+|entra\s+|pode\s+|ganha\s+|surge\s+|deve\s+|nega\s+|negou\s+|aceitaria\s+)",
-    ]
-    for pattern in patterns:
-        for match in re.finditer(pattern,t):
-            candidate=match.group(1).strip()
-            if norm(candidate) not in EXCLUDE and len(candidate.split())==2:
-                names.add(candidate)
-    return sorted(names)
+    names = registry([], registered)
+    aliases = defaultdict(set)
+    for name in names:
+        parts = name.split()
+        for alias in [name, parts[0], parts[-1], ' '.join(parts[:2])]:
+            if len(norm(alias)) >= 4:
+                aliases[norm(alias)].add(name)
+    found = set()
+    for alias, candidates in aliases.items():
+        if len(candidates) == 1 and contains(title, alias):
+            found.update(candidates)
+    return sorted(found)
+
+def person_context(title, person, registered=()):
+    # Split contrast/coordination to avoid transferring another person's denial.
+    chunks = re.split(r'[;.!?]|\s+(?:mas|enquanto)\s+|\s+e\s+(?=[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ])', str(title), flags=re.I)
+    matching = [c for c in chunks if find_people(c, registered) == [person]]
+    return ' '.join(matching) if len(matching) == 1 else ''
+
+def status_from_title(title, person=None, registered=()):
+    t = norm(person_context(title, person, registered) if person else title)
+    if not t:
+        return 'Menção'
+    if re.search(r'\b(nao foi nomead[oa]|nao sera|nao recebeu|nao houve|nega|negou|descarta|descartou|recusa|recusou|desmente)\b', t):
+        return 'Negativa'
+    if re.search(r'\b(pode|deve|podera|seria|cotad[oa]|especula|favorit[oa]|sondad[oa]|disputa)\b', t):
+        return 'Especulação'
+    if re.search(r'\b(foi nomead[oa]|nomeou|nomeacao confirmada|anunciou a nomeacao)\b', t):
+        return 'Nomeação noticiada'
+    if re.search(r'\b(convite|convidad[oa]|convidou)\b', t):
+        return 'Convite noticiado'
+    if re.search(r'\b(negocia|negociacao|conversa|tratativas)\b', t):
+        return 'Negociação'
+    if re.search(r'\b(indicad[oa]|indica|assumira|ganha forca|nome para|comandar)\b', t):
+        return 'Especulação'
+    return 'Menção'
 
 def group_news(rows, registered=()):
-    groups=defaultdict(list)
-    unmatched=[]
+    known = registry([r.get('titulo','') for r in rows], registered)
+    groups, unmatched = defaultdict(list), []
     for row in rows:
-        names=find_people(row.get('titulo',''),registered)
+        names = find_people(row.get('titulo',''), known)
         if not names:
             unmatched.append(row)
         for name in names:

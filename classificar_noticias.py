@@ -50,26 +50,23 @@ MOVEMENT = re.compile(
 )
 
 def associate(title, catalog_names):
+    """Todos os órgãos participam; vínculo administrativo não transfere indicação."""
     t = norm(title)
-    if not MOVEMENT.search(t):
-        return []
-    # Não confundir especulação sobre eventual ministério novo com pasta existente.
-    if "ministerio da seguranca" in t and "ministerio da justica" not in t:
-        return []
-    # Referências à composição do governo derrotado não são indicações para Lula.
-    if "flavio bolsonaro" in t and ("favorito" in t or "governo de flavio" in t):
-        return []
-    known = set(catalog_names)
     found = []
-    for org, patterns in ALIASES.items():
-        if org in known and any(re.search(p, t) for p in patterns):
+    for org in sorted(set(catalog_names)):
+        official = norm(org)
+        patterns = [r'(?<!\w)' + re.escape(official) + r'(?!\w)']
+        if official.startswith('ministerio '):
+            short = re.sub(r'^ministerio (?:da |das |do |dos |de )?', '', official)
+            patterns.append(r'(?<!\w)' + re.escape(short) + r'(?!\w)')
+        # Curtos e siglas exigem grafia exata; evita ANS dentro de palavras.
+        if len(org) <= 6 and org.isupper():
+            matched = bool(re.search(r'(?<!\w)' + re.escape(org) + r'(?!\w)', str(title)))
+        else:
+            matched = any(re.search(p, t) for p in patterns)
+        # Aliases editoriais com palavras genéricas só em contexto de movimentação.
+        if not matched and MOVEMENT.search(t):
+            matched = any(re.search(p,t) for p in ALIASES.get(org, []))
+        if matched:
             found.append(org)
-    # Para nomes oficiais não cobertos por aliases, exigir a expressão inteira.
-    for org in known:
-        if org in found:
-            continue
-        if org.startswith("Ministério "):
-            phrase = norm(org)
-            if phrase in t:
-                found.append(org)
-    return sorted(set(found))
+    return found
