@@ -16,6 +16,15 @@ BRIDGE = r'''<script>
     const key = '__radarSameOriginHistoryBridge';
     const previous = host[key];
     if (previous) previous.dispose();
+    // The Cloud host may echo a restored query with pushState. Replacing an
+    // identical URL keeps the browser's Forward stack intact.
+    const originalPush = host.history.pushState;
+    const originalReplace = host.history.replaceState;
+    const pushDistinct = function (...args) {
+      const target = new URL(args[2] == null ? host.location.href : args[2], host.location.href);
+      return (target.href === host.location.href ? originalReplace : originalPush).apply(host.history, args);
+    };
+    host.history.pushState = pushDistinct;
     let timer;
     const restore = () => {
       // Let the Cloud container finish its own URL update before notifying Streamlit.
@@ -38,6 +47,7 @@ BRIDGE = r'''<script>
       dispose() {
         host.removeEventListener('popstate', restore);
         host.clearTimeout(timer);
+        if (host.history.pushState === pushDistinct) host.history.pushState = originalPush;
       }
     };
   } catch (_) {
