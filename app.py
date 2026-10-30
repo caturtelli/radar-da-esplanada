@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 import pandas as pd
 import streamlit as st
 from classificar_noticias import associate
+from identificar_nomes import group_news, status_from_title
 
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
 st.markdown("""<style>
@@ -180,21 +181,35 @@ else:
     sub=filtered[filtered['ministerio']==ministry].copy()
     st.caption(f'{sub["nome"].nunique()} pessoa(s) monitorada(s) · {len(sub)} movimentação(ões)')
     auto_related = collected[collected['orgaos_associados'].map(lambda v: ministry in v)].copy() if not collected.empty else collected.copy()
-    st.markdown('### Notícias associadas automaticamente')
-    st.caption('Triagem por manchete. Pode conter falsos positivos; não equivale a indicação confirmada.')
+    st.markdown('### Pessoas mencionadas nas notícias')
+    st.caption('Triagem automática por manchetes; nomes, cargos e convites exigem verificação jornalística.')
     if auto_related.empty:
         st.info('Nenhuma notícia associada automaticamente a este órgão.')
     else:
         auto_related['_data'] = pd.to_datetime(auto_related['data_publicacao'], errors='coerce', utc=True)
         auto_related = auto_related.sort_values('_data', ascending=False, kind='stable')
-        for _, art in auto_related.head(60).iterrows():
-            title = html.escape(str(art.get('titulo','')))
-            vehicle = html.escape(str(art.get('veiculo','')))
-            date = html.escape(str(art.get('data_publicacao','')))
-            if valid_url(art.get('url','')):
-                st.markdown(f'**{title}**  \n{vehicle} · {date} · [Ler reportagem]({art["url"]})')
-            else:
-                st.write(title, vehicle, date)
+        groups, unmatched = group_news(auto_related.to_dict('records'), df['nome'].dropna().tolist())
+        if groups:
+            st.caption(f'{len(groups)} nome(s) identificado(s) nas manchetes · {len(unmatched)} matéria(s) sem nome identificável')
+            for person, articles in sorted(groups.items(), key=lambda pair: (-len(pair[1]),pair[0])):
+                last_date = str(articles[0].get('data_publicacao',''))
+                with st.expander(f'👤 {person} · {len(articles)} reportagem(ns) · última: {last_date}'):
+                    st.warning('Identificação automática. Não equivale a candidatura, convite ou nomeação confirmada.', icon='⚠️')
+                    for idx, art in enumerate(articles):
+                        title = str(art.get('titulo',''))
+                        st.markdown(f"**{html.escape(title)}**")
+                        st.caption(f"{art.get('veiculo','')} · {art.get('data_publicacao','')} · {status_from_title(title)}")
+                        if valid_url(art.get('url','')):
+                            st.link_button('Ler reportagem ↗',art['url'],key=f"auto_{ministry}_{person}_{idx}")
+                        st.divider()
+        else:
+            st.info('Ainda não foi possível identificar nomes completos com segurança nas manchetes deste órgão.')
+        with st.expander(f'🗞️ Notícias sem nome identificado · {len(unmatched)}'):
+            for art in unmatched[:100]:
+                st.markdown(f"**{html.escape(str(art.get('titulo','')))}**")
+                st.caption(f"{art.get('veiculo','')} · {art.get('data_publicacao','')}")
+                if valid_url(art.get('url','')):
+                    st.markdown(f"[Ler reportagem]({art['url']})")
     st.divider()
     if sub.empty:
         st.info('Nenhuma indicação cadastrada/verificada para este órgão.')
