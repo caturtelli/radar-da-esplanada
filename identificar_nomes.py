@@ -4,7 +4,7 @@ import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 
-ENGINE_VERSION = '2.1.2'
+ENGINE_VERSION = '2.1.3'
 
 SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
          'Margareth Menezes', 'Pierpaolo Bottini', 'Luiz Marinho', 'André Janones',
@@ -30,7 +30,7 @@ BLOCK = {'ministerio','secretaria','banco','governo','federal','republica','civi
          'brasileiro','eleicoes','urna','urnas','presidente','agencia','fundo','central',
          'defesa','saude','cultura','educacao','previdencia','esporte','turismo',
          'comunicacoes','ambiente','planejamento','gestao','relacoes','direitos',
-         'agricultura','transportes'}
+         'agricultura','transportes','busca','retorno','negocia','formacao','conversa','mantem'}
 
 @lru_cache(maxsize=20000)
 def norm(t):
@@ -90,6 +90,8 @@ def _person_context(title,person,registered):
 
 def person_context(title, person, registered=()):
     # 'Ex-advogado de X' does not make X the candidate for the office.
+    if re.match(r'^\s*'+re.escape(norm(person))+r'\s*:', norm(title)):
+        return ''
     reference=r'(?:advogad[oa]|aliad[oa]|filh[oa]|marido|esposa|irmao)\s+d[eo]\s+'
     if re.search(reference+r'(?:'+re.escape(norm(person))+'|'+re.escape(norm(person.split()[-1]))+r')\b',norm(title)):
         return ''
