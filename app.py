@@ -10,7 +10,7 @@ import importlib
 import identificar_nomes as name_engine
 import classificar_noticias as organ_engine
 import radar_model as radar_engine
-if getattr(name_engine, 'ENGINE_VERSION', None) != '2.1.1':
+if getattr(name_engine, 'ENGINE_VERSION', None) != '2.1.2':
     importlib.reload(organ_engine)
     importlib.reload(name_engine)
     importlib.reload(radar_engine)

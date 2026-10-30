@@ -4,7 +4,7 @@ import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 
-ENGINE_VERSION = '2.1.1'
+ENGINE_VERSION = '2.1.2'
 
 SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
          'Margareth Menezes', 'Pierpaolo Bottini', 'Luiz Marinho', 'André Janones',
@@ -27,7 +27,10 @@ BLOCK = {'ministerio','secretaria','banco','governo','federal','republica','civi
          'mais','coluna','conheca','paraibano','compor','indica','como',
          'economia','governador','governadora','nacional','sistema','projeto',
          'poder','partido','trabalhadores','sao','santa','municipio','cidade',
-         'brasileiro','eleicoes','urna','urnas','presidente','agencia','fundo','central'}
+         'brasileiro','eleicoes','urna','urnas','presidente','agencia','fundo','central',
+         'defesa','saude','cultura','educacao','previdencia','esporte','turismo',
+         'comunicacoes','ambiente','planejamento','gestao','relacoes','direitos',
+         'agricultura','transportes'}
 
 @lru_cache(maxsize=20000)
 def norm(t):
