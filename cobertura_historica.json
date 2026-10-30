@@ -1,0 +1,868 @@
+{
+  "executado_em": "2026-10-30T15:50:03.397498+00:00",
+  "inicio": "2026-10-25",
+  "fim": "2026-10-30",
+  "orgaos_consultados": 79,
+  "antes": 472,
+  "novas": 1243,
+  "total": 1715,
+  "falhas": 0,
+  "consultas": [
+    {
+      "orgao": "Ministério da Agricultura e Pecuária",
+      "consulta": "\"Lula\" (\"Ministério da Agricultura e Pecuária\" OR \"Agricultura e Pecuária\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 19,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério das Cidades",
+      "consulta": "\"Lula\" (\"Ministério das Cidades\" OR \"Cidades\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 27,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Ciência, Tecnologia e Inovação",
+      "consulta": "\"Lula\" (\"Ministério da Ciência, Tecnologia e Inovação\" OR \"Ciência, Tecnologia e Inovação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério das Comunicações",
+      "consulta": "\"Lula\" (\"Ministério das Comunicações\" OR \"Comunicações\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 29,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Cultura",
+      "consulta": "\"Lula\" (\"Ministério da Cultura\" OR \"Cultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 26,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Defesa",
+      "consulta": "\"Lula\" (\"Ministério da Defesa\" OR \"Defesa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 23,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "consulta": "\"Lula\" (\"Ministério do Desenvolvimento Agrário e Agricultura Familiar\" OR \"Desenvolvimento Agrário e Agricultura Familiar\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+      "consulta": "\"Lula\" (\"Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome\" OR \"Desenvolvimento e Assistência Social, Família e Combate à Fome\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
+      "consulta": "\"Lula\" (\"Ministério do Desenvolvimento, Indústria, Comércio e Serviços\" OR \"Desenvolvimento, Indústria, Comércio e Serviços\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério dos Direitos Humanos e Cidadania",
+      "consulta": "\"Lula\" (\"Ministério dos Direitos Humanos e Cidadania\" OR \"Direitos Humanos e Cidadania\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 2,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Educação",
+      "consulta": "\"Lula\" (\"Ministério da Educação\" OR \"Educação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 30,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",
+      "consulta": "\"Lula\" (\"Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\" OR \"Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 7,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Esporte",
+      "consulta": "\"Lula\" (\"Ministério do Esporte\" OR \"Esporte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 30,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 99,
+      "saturada": true,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Gestão e da Inovação em Serviços Públicos",
+      "consulta": "\"Lula\" (\"Ministério da Gestão e da Inovação em Serviços Públicos\" OR \"Gestão e da Inovação em Serviços Públicos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 4,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Igualdade Racial",
+      "consulta": "\"Lula\" (\"Ministério da Igualdade Racial\" OR \"Igualdade Racial\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 34,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Integração e Desenvolvimento Regional",
+      "consulta": "\"Lula\" (\"Ministério da Integração e Desenvolvimento Regional\" OR \"Integração e Desenvolvimento Regional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Justiça e Segurança Pública",
+      "consulta": "\"Lula\" (\"Ministério da Justiça e Segurança Pública\" OR \"Justiça e Segurança Pública\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 36,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+      "consulta": "\"Lula\" (\"Ministério do Meio Ambiente e Mudança do Clima\" OR \"Meio Ambiente e Mudança do Clima\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 6,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério de Minas e Energia",
+      "consulta": "\"Lula\" (\"Ministério de Minas e Energia\" OR \"Minas e Energia\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 30,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério das Mulheres",
+      "consulta": "\"Lula\" (\"Ministério das Mulheres\" OR \"Mulheres\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 50,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Pesca e Aquicultura",
+      "consulta": "\"Lula\" (\"Ministério da Pesca e Aquicultura\" OR \"Pesca e Aquicultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 6,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "consulta": "\"Lula\" (\"Ministério do Planejamento e Orçamento\" OR \"Planejamento e Orçamento\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 26,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério de Portos e Aeroportos",
+      "consulta": "\"Lula\" (\"Ministério de Portos e Aeroportos\" OR \"Portos e Aeroportos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 19,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Previdência Social",
+      "consulta": "\"Lula\" (\"Ministério da Previdência Social\" OR \"Previdência Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 26,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério dos Povos Indígenas",
+      "consulta": "\"Lula\" (\"Ministério dos Povos Indígenas\" OR \"Povos Indígenas\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 27,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério das Relações Exteriores",
+      "consulta": "\"Lula\" (\"Ministério das Relações Exteriores\" OR \"Relações Exteriores\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 26,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Saúde",
+      "consulta": "\"Lula\" (\"Ministério da Saúde\" OR \"Saúde\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 32,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Trabalho e Emprego",
+      "consulta": "\"Lula\" (\"Ministério do Trabalho e Emprego\" OR \"Trabalho e Emprego\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 42,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério dos Transportes",
+      "consulta": "\"Lula\" (\"Ministério dos Transportes\" OR \"Transportes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 57,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério do Turismo",
+      "consulta": "\"Lula\" (\"Ministério do Turismo\" OR \"Turismo\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 62,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Presidência da República",
+      "consulta": "\"Lula\" (\"Presidência da República\" OR \"Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 54,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Casa Civil",
+      "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 45,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Secretaria-Geral da Presidência da República",
+      "consulta": "\"Lula\" (\"Secretaria-Geral da Presidência da República\" OR \"Secretaria-Geral da Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 1,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Secretaria de Relações Institucionais",
+      "consulta": "\"Lula\" (\"Secretaria de Relações Institucionais\" OR \"Secretaria de Relações Institucionais\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 33,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Secretaria de Comunicação Social",
+      "consulta": "\"Lula\" (\"Secretaria de Comunicação Social\" OR \"Secretaria de Comunicação Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 50,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Gabinete de Segurança Institucional",
+      "consulta": "\"Lula\" (\"Gabinete de Segurança Institucional\" OR \"Gabinete de Segurança Institucional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Advocacia-Geral da União",
+      "consulta": "\"Lula\" (\"Advocacia-Geral da União\" OR \"Advocacia-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 19,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Controladoria-Geral da União",
+      "consulta": "\"Lula\" (\"Controladoria-Geral da União\" OR \"Controladoria-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Banco do Brasil",
+      "consulta": "\"Lula\" (\"Banco do Brasil\" OR \"Banco do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 17,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Caixa Econômica Federal",
+      "consulta": "\"Lula\" (\"Caixa Econômica Federal\" OR \"Caixa Econômica Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 23,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Banco Central do Brasil",
+      "consulta": "\"Lula\" (\"Banco Central do Brasil\" OR \"Banco Central do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 8,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Casa da Moeda do Brasil",
+      "consulta": "\"Lula\" (\"Casa da Moeda do Brasil\" OR \"Casa da Moeda do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "BNDES",
+      "consulta": "\"Lula\" (\"BNDES\" OR \"BNDES\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 46,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "INMETRO",
+      "consulta": "\"Lula\" (\"INMETRO\" OR \"INMETRO\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 4,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Petrobras",
+      "consulta": "\"Lula\" (\"Petrobras\" OR \"Petrobras\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 23,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Eletronuclear",
+      "consulta": "\"Lula\" (\"Eletronuclear\" OR \"Eletronuclear\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 4,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ANEEL",
+      "consulta": "\"Lula\" (\"ANEEL\" OR \"ANEEL\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 11,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ANP",
+      "consulta": "\"Lula\" (\"ANP\" OR \"ANP\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ANM",
+      "consulta": "\"Lula\" (\"ANM\" OR \"ANM\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 11,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Anatel",
+      "consulta": "\"Lula\" (\"Anatel\" OR \"Anatel\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 17,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Correios",
+      "consulta": "\"Lula\" (\"Correios\" OR \"Correios\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 21,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Polícia Federal",
+      "consulta": "\"Lula\" (\"Polícia Federal\" OR \"Polícia Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 26,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Polícia Rodoviária Federal",
+      "consulta": "\"Lula\" (\"Polícia Rodoviária Federal\" OR \"Polícia Rodoviária Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Senappen",
+      "consulta": "\"Lula\" (\"Senappen\" OR \"Senappen\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Anvisa",
+      "consulta": "\"Lula\" (\"Anvisa\" OR \"Anvisa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ANS",
+      "consulta": "\"Lula\" (\"ANS\" OR \"ANS\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Fiocruz",
+      "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 12,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "FNDE",
+      "consulta": "\"Lula\" (\"FNDE\" OR \"FNDE\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 3,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Inep",
+      "consulta": "\"Lula\" (\"Inep\" OR \"Inep\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 35,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Capes",
+      "consulta": "\"Lula\" (\"Capes\" OR \"Capes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 2,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ancine",
+      "consulta": "\"Lula\" (\"Ancine\" OR \"Ancine\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 2,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Iphan",
+      "consulta": "\"Lula\" (\"Iphan\" OR \"Iphan\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Funarte",
+      "consulta": "\"Lula\" (\"Funarte\" OR \"Funarte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 8,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ANTT",
+      "consulta": "\"Lula\" (\"ANTT\" OR \"ANTT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "DNIT",
+      "consulta": "\"Lula\" (\"DNIT\" OR \"DNIT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 13,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Anac",
+      "consulta": "\"Lula\" (\"Anac\" OR \"Anac\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 10,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Antaq",
+      "consulta": "\"Lula\" (\"Antaq\" OR \"Antaq\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 2,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Infraero",
+      "consulta": "\"Lula\" (\"Infraero\" OR \"Infraero\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 1,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ibama",
+      "consulta": "\"Lula\" (\"Ibama\" OR \"Ibama\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 9,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "ICMBio",
+      "consulta": "\"Lula\" (\"ICMBio\" OR \"ICMBio\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 1,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "IBGE",
+      "consulta": "\"Lula\" (\"IBGE\" OR \"IBGE\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 31,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ipea",
+      "consulta": "\"Lula\" (\"Ipea\" OR \"Ipea\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 4,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Embrapa",
+      "consulta": "\"Lula\" (\"Embrapa\" OR \"Embrapa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Funai",
+      "consulta": "\"Lula\" (\"Funai\" OR \"Funai\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 9,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Serpro",
+      "consulta": "\"Lula\" (\"Serpro\" OR \"Serpro\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Dataprev",
+      "consulta": "\"Lula\" (\"Dataprev\" OR \"Dataprev\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 5,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Agência Brasileira de Inteligência",
+      "consulta": "\"Lula\" (\"Agência Brasileira de Inteligência\" OR \"Agência Brasileira de Inteligência\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 16,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Empresa Brasil de Comunicação",
+      "consulta": "\"Lula\" (\"Empresa Brasil de Comunicação\" OR \"Empresa Brasil de Comunicação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 7,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"ministério\" \"nome\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 54,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"ministro\" \"indicação\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 50,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"secretário-executivo\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 38,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"governo Lula\" \"nomeação\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 23,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"composição do governo\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"estatais\" \"presidência\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 10,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"novo governo\" ministros",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 28,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"reforma ministerial\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 9,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"cotados\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 68,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Governo — busca geral",
+      "consulta": "\"Lula\" \"equipe ministerial\"",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-30",
+      "encontradas": 24,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-25",
+      "fim": "2026-10-25",
+      "encontradas": 15,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-26",
+      "fim": "2026-10-26",
+      "encontradas": 89,
+      "saturada": true,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-27",
+      "fim": "2026-10-27",
+      "encontradas": 52,
+      "saturada": true,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-28",
+      "fim": "2026-10-28",
+      "encontradas": 28,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-29",
+      "fim": "2026-10-29",
+      "encontradas": 34,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Fazenda",
+      "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "inicio": "2026-10-30",
+      "fim": "2026-10-30",
+      "encontradas": 18,
+      "saturada": false,
+      "falha": ""
+    }
+  ],
+  "limite": "RSS não garante cobertura integral; buscas sem resultados não provam ausência de notícias."
+}

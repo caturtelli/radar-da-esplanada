@@ -70,3 +70,22 @@ def filter_rows(rows, query='', organs=(), statuses=(), vehicles=(), recent=Fals
         if recent and not is_recent(row, now): continue
         output.append(row)
     return sorted(output, key=lambda r: str(timestamp(r.get('data_publicacao',''))) if pd.notna(timestamp(r.get('data_publicacao',''))) else '', reverse=True)
+
+
+SECOND_ROUND = pd.Timestamp('2026-10-25T17:00:00', tz='America/Sao_Paulo').tz_convert('UTC')
+
+def since_second_round(row):
+    value=timestamp(row.get('data_publicacao',''))
+    return bool(pd.notna(value) and value >= SECOND_ROUND)
+
+def organ_people(rows, curated, org):
+    """Somente vínculos explícitos por trecho e registros editoriais deste órgão."""
+    from collections import defaultdict
+    grouped=defaultdict(list)
+    for row in rows:
+        for person,orgs in row.get('vinculos',{}).items():
+            if org in orgs and row.get('estados',{}).get(person,'Menção')!='Menção': grouped[person].append(row)
+    if not curated.empty:
+        for person in curated.loc[curated.ministerio==org,'nome']:
+            grouped.setdefault(person,[])
+    return dict(sorted(grouped.items(),key=lambda x:(-len(x[1]),x[0])))

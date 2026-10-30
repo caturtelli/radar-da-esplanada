@@ -45,3 +45,29 @@ Validar qualidade e calibração antes de mostrar escores. A amostra inicial é 
 
 Alterações na branch `codex/radar-2.0`, destinadas a pull request para `main`.
 Não mesclar ou publicar antes da autorização da proprietária.
+
+## Correção de navegação e cobertura
+
+A abertura mostra cartões clicáveis dos 31 ministérios, sem selecionar uma pasta por padrão.
+Há atalhos explícitos para órgãos centrais, entidades e todos os 79 órgãos. Cada cartão apresenta
+pessoas e reportagens; a página do órgão permite abrir fichas individuais e voltar à grade.
+A consulta inicial considera publicações desde 25/10/2026 às 17h de Brasília (fechamento da votação),
+e o histórico anterior continua disponível no filtro de período. Esta data é um recorte operacional,
+não uma afirmação de que toda publicação posterior trata do resultado eleitoral.
+
+`expandir_historico.py` executa buscas complementares por todos os órgãos, incluindo o dia 25,
+divide consultas que atingem o limite de 100 entradas em buscas diárias e registra consultas,
+falhas e limites em `cobertura_historica.json`. A busca não usa o órgão consultado como evidência:
+a associação continua dependendo do texto da manchete. Linhas/colunas existentes são preservadas,
+e novas URLs são acrescentadas sem duplicar URLs já registradas.
+
+Executar manualmente: `python expandir_historico.py --inicio 2026-10-25 --fim 2026-10-30`.
+O relatório deste PR registra 79 órgãos consultados, 1.243 notícias adicionais e nenhuma consulta com falha.
+Não representa garantia de cobertura integral da imprensa. O RSS omite fontes e reportagens e
+não fornece necessariamente texto integral ou jornalista. A coleta automática e seus workflows
+permanecem inalterados; a busca complementar não cria uma nova rotina automática.
+
+O reconhecimento agora filtra expressões institucionais e cabeçalhos, separa construções com duas
+pessoas quando há nomes explícitos e não transforma o cliente de um advogado no candidato ao cargo.
+Os cartões destacam vínculos com indícios de movimentação; simples menções permanecem nas reportagens.
+Ainda pode haver falsos positivos/negativos; não se deduzem nomes ausentes nem confirmações oficiais.

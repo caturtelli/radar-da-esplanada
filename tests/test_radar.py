@@ -66,3 +66,49 @@ def test_real_headline_and_generic_alias_regression():
     assert row['vinculos']['Aguinaldo Ribeiro']==['Ministério de Portos e Aeroportos']
     assert 'Para Giannetti' not in known
     assert 'Paulo Silva' in registry(['Paulo Silva é cotado para Anvisa'])
+
+def test_no_generic_entities_and_two_distinct_targets():
+    known=registry(['Criminalista Pierpaolo Bottini é cotado para Ministério da Justiça','Nome de Wagner Moura surge para Ministério da Cultura','Equipe de Lula define Planos de Lula'])
+    assert 'Pierpaolo Bottini' in known
+    assert 'Wagner Moura' in known
+    assert not any(n in known for n in ['Equipe de Lula','Planos de Lula','Criminalista Pierpaolo Bottini','Nome de Wagner Moura'])
+    t='Rafael Fonteles é cotado para ministro da Fazenda e Camilo Santana para ministro-chefe da Casa Civil'
+    catalog=read_csv(BASE,'catalogo_orgaos.csv')
+    row=build_index(pd.DataFrame([{'titulo':t}]),pd.DataFrame(),catalog)[0]
+    assert row['vinculos']['Rafael Fonteles']==['Ministério da Fazenda']
+    assert row['vinculos']['Camilo Santana']==['Casa Civil']
+
+def test_history_expansion_preserves_unknown_fields_and_queries_all_organs():
+    from expandir_historico import merge_history,organ_queries
+    old=[{'url':'https://a.test/x','titulo':'Original','jornalista':'Autora','extra':'preservar'}]
+    combined=merge_history(old,[{'url':'https://a.test/x','titulo':'Repetida'},{'url':'https://b.test/y','titulo':'Nova'}])
+    assert combined[0]==old[0]
+    assert len(combined)==2
+    catalog=read_csv(BASE,'catalogo_orgaos.csv')
+    assert set(catalog.orgao).issubset({o for o,q in organ_queries(catalog.to_dict('records'))})
+
+def test_second_round_cutoff():
+    from radar_model import since_second_round
+    assert not since_second_round({'data_publicacao':'2026-10-25T19:59:00Z'})
+    assert since_second_round({'data_publicacao':'2026-10-25T20:01:00Z'})
+    assert not since_second_round({'data_publicacao':''})
+
+
+def test_lula_not_lula_da_fonte():
+    assert not find_people('Lula avalia novo governo',['Lula da Fonte'])
+
+
+def test_lawyers_client_is_not_candidate():
+    t='Lula avalia ex-advogado de Daniel Vorcaro para assumir Ministério da Justiça'
+    assert status_from_title(t,'Daniel Vorcaro',['Daniel Vorcaro'])=='Menção'
+
+
+def test_real_corpus_names_in_multiple_ministries():
+    from radar_model import organ_people
+    catalog=read_csv(BASE,'catalogo_orgaos.csv')
+    curated=read_csv(BASE,'indicacoes.csv')
+    rows=build_index(read_csv(BASE,'noticias_coletadas.csv'),curated,catalog)
+    for org,person in [('Ministério da Agricultura e Pecuária','Carlos Fávaro'),('Ministério da Justiça e Segurança Pública','Pierpaolo Bottini'),('Ministério das Mulheres','Erika Hilton'),('Ministério da Fazenda','Rafael Fonteles'),('Casa Civil','Camilo Santana')]:
+        assert person in organ_people([r for r in rows if org in r['orgaos']],curated,org)
+    justice=organ_people([r for r in rows if 'Ministério da Justiça e Segurança Pública' in r['orgaos']],curated,'Ministério da Justiça e Segurança Pública')
+    assert 'Daniel Vorcaro' not in justice
