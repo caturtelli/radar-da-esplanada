@@ -12,7 +12,9 @@ SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
 NAME = re.compile(r'\b[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+(?:\s+(?:(?:de|da|do|dos|das)\s+)?[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç]+){1,4}\b')
 BLOCK = {'ministerio','secretaria','banco','governo','federal','republica','civil',
          'brasil','supremo','tribunal','publica','congresso','camara','senado',
-         'folha','globo','estado','paulo','news','justica','seguranca'}
+         'folha','globo','estado','news','justica','seguranca',
+         'para','sobre','apos','com','sem','novo','nova','nesta','neste',
+         'portal','ministerios','presidencia','aeroportos','portos'}
 
 @lru_cache(maxsize=20000)
 def norm(t):
@@ -22,7 +24,8 @@ def contains(text, phrase):
     return bool(re.search(r'(?<!\w)' + re.escape(norm(phrase)) + r'(?!\w)', norm(text)))
 
 def discover(title):
-    return [m.group() for m in NAME.finditer(str(title).split(' - ')[0])
+    title = re.sub(r'\b(?:Senador[a]?|Deputad[oa]|Ministr[oa]|Governador[a]?|Presidente)\s+', '', str(title))
+    return [m.group() for m in NAME.finditer(title.split(' - ')[0])
             if not set(norm(m.group()).split()) & BLOCK]
 
 def registry(titles, registered=()):
@@ -39,12 +42,13 @@ def registry(titles, registered=()):
     return sorted(unique.values())
 
 def find_people(title, registered=()):
+    title = str(title).split(' - ')[0]
     names = registry([], registered)
     aliases = defaultdict(set)
     for name in names:
         parts = name.split()
         for alias in [name, parts[0], parts[-1], ' '.join(parts[:2])]:
-            if len(norm(alias)) >= 4:
+            if len(norm(alias)) >= 4 and norm(alias) not in BLOCK:
                 aliases[norm(alias)].add(name)
     found = set()
     for alias, candidates in aliases.items():
@@ -54,7 +58,7 @@ def find_people(title, registered=()):
 
 def person_context(title, person, registered=()):
     # Split contrast/coordination to avoid transferring another person's denial.
-    chunks = re.split(r'[;.!?]|\s+(?:mas|enquanto)\s+|\s+e\s+(?=[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ])', str(title), flags=re.I)
+    chunks = re.split(r'[;.!?]|\s+(?:mas|enquanto)\s+', str(title), flags=re.I)
     matching = [c for c in chunks if find_people(c, registered) == [person]]
     return ' '.join(matching) if len(matching) == 1 else ''
 
