@@ -1,3 +1,80 @@
 ﻿orgao,categoria,orgao_superior
+Ministério da Agricultura e Pecuária,Ministério,
+Ministério das Cidades,Ministério,
+"Ministério da Ciência, Tecnologia e Inovação",Ministério,
+Ministério das Comunicações,Ministério,
 Ministério da Cultura,Ministério,
+Ministério da Defesa,Ministério,
+Ministério do Desenvolvimento Agrário e Agricultura Familiar,Ministério,
+"Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",Ministério,
+"Ministério do Desenvolvimento, Indústria, Comércio e Serviços",Ministério,
+Ministério dos Direitos Humanos e Cidadania,Ministério,
+Ministério da Educação,Ministério,
+"Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",Ministério,
+Ministério do Esporte,Ministério,
+Ministério da Fazenda,Ministério,
+Ministério da Gestão e da Inovação em Serviços Públicos,Ministério,
+Ministério da Igualdade Racial,Ministério,
+Ministério da Integração e Desenvolvimento Regional,Ministério,
+Ministério da Justiça e Segurança Pública,Ministério,
+Ministério do Meio Ambiente e Mudança do Clima,Ministério,
+Ministério de Minas e Energia,Ministério,
+Ministério das Mulheres,Ministério,
+Ministério da Pesca e Aquicultura,Ministério,
+Ministério do Planejamento e Orçamento,Ministério,
+Ministério de Portos e Aeroportos,Ministério,
+Ministério da Previdência Social,Ministério,
+Ministério dos Povos Indígenas,Ministério,
+Ministério das Relações Exteriores,Ministério,
+Ministério da Saúde,Ministério,
+Ministério do Trabalho e Emprego,Ministério,
+Ministério dos Transportes,Ministério,
+Ministério do Turismo,Ministério,
 Presidência da República,Presidência e órgãos centrais,
+Casa Civil,Presidência e órgãos centrais,
+Secretaria-Geral da Presidência da República,Presidência e órgãos centrais,
+Secretaria de Relações Institucionais,Presidência e órgãos centrais,
+Secretaria de Comunicação Social,Presidência e órgãos centrais,
+Gabinete de Segurança Institucional,Presidência e órgãos centrais,
+Advocacia-Geral da União,Presidência e órgãos centrais,
+Controladoria-Geral da União,Presidência e órgãos centrais,
+Banco do Brasil,Entidades estratégicas (seleção inicial),Ministério da Fazenda
+Caixa Econômica Federal,Entidades estratégicas (seleção inicial),Ministério da Fazenda
+Banco Central do Brasil,Entidades estratégicas (seleção inicial),Ministério da Fazenda
+Casa da Moeda do Brasil,Entidades estratégicas (seleção inicial),Ministério da Fazenda
+BNDES,Entidades estratégicas (seleção inicial),"Ministério do Desenvolvimento, Indústria, Comércio e Serviços"
+INMETRO,Entidades estratégicas (seleção inicial),"Ministério do Desenvolvimento, Indústria, Comércio e Serviços"
+Petrobras,Entidades estratégicas (seleção inicial),Ministério de Minas e Energia
+Eletronuclear,Entidades estratégicas (seleção inicial),Ministério de Minas e Energia
+ANEEL,Entidades estratégicas (seleção inicial),Ministério de Minas e Energia
+ANP,Entidades estratégicas (seleção inicial),Ministério de Minas e Energia
+ANM,Entidades estratégicas (seleção inicial),Ministério de Minas e Energia
+Anatel,Entidades estratégicas (seleção inicial),Ministério das Comunicações
+Correios,Entidades estratégicas (seleção inicial),Ministério das Comunicações
+Polícia Federal,Entidades estratégicas (seleção inicial),Ministério da Justiça e Segurança Pública
+Polícia Rodoviária Federal,Entidades estratégicas (seleção inicial),Ministério da Justiça e Segurança Pública
+Senappen,Entidades estratégicas (seleção inicial),Ministério da Justiça e Segurança Pública
+Anvisa,Entidades estratégicas (seleção inicial),Ministério da Saúde
+ANS,Entidades estratégicas (seleção inicial),Ministério da Saúde
+Fiocruz,Entidades estratégicas (seleção inicial),Ministério da Saúde
+FNDE,Entidades estratégicas (seleção inicial),Ministério da Educação
+Inep,Entidades estratégicas (seleção inicial),Ministério da Educação
+Capes,Entidades estratégicas (seleção inicial),Ministério da Educação
+Ancine,Entidades estratégicas (seleção inicial),Ministério da Cultura
+Iphan,Entidades estratégicas (seleção inicial),Ministério da Cultura
+Funarte,Entidades estratégicas (seleção inicial),Ministério da Cultura
+ANTT,Entidades estratégicas (seleção inicial),Ministério dos Transportes
+DNIT,Entidades estratégicas (seleção inicial),Ministério dos Transportes
+Anac,Entidades estratégicas (seleção inicial),Ministério de Portos e Aeroportos
+Antaq,Entidades estratégicas (seleção inicial),Ministério de Portos e Aeroportos
+Infraero,Entidades estratégicas (seleção inicial),Ministério de Portos e Aeroportos
+Ibama,Entidades estratégicas (seleção inicial),Ministério do Meio Ambiente e Mudança do Clima
+ICMBio,Entidades estratégicas (seleção inicial),Ministério do Meio Ambiente e Mudança do Clima
+IBGE,Entidades estratégicas (seleção inicial),Ministério do Planejamento e Orçamento
+Ipea,Entidades estratégicas (seleção inicial),Ministério do Planejamento e Orçamento
+Embrapa,Entidades estratégicas (seleção inicial),Ministério da Agricultura e Pecuária
+Funai,Entidades estratégicas (seleção inicial),Ministério dos Povos Indígenas
+Serpro,Entidades estratégicas (seleção inicial),Ministério da Gestão e da Inovação em Serviços Públicos
+Dataprev,Entidades estratégicas (seleção inicial),Ministério da Gestão e da Inovação em Serviços Públicos
+Agência Brasileira de Inteligência,Entidades estratégicas (seleção inicial),Presidência da República
+Empresa Brasil de Comunicação,Entidades estratégicas (seleção inicial),Presidência da República
