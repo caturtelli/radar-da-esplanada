@@ -1,0 +1,16 @@
+ATUALIZAÇÃO 5 — COLETA A CADA 5 MINUTOS
+
+Envie à raiz do repositório: app.py, coletar_noticias.py, requirements.txt.
+Substitua .github/workflows/atualizar_radar.yml mantendo exatamente a pasta .github/workflows/.
+Preserve indicacoes.csv, noticias.csv e catalogo_orgaos.csv.
+
+No GitHub: Actions → Atualizar Radar da Esplanada → Run workflow.
+Depois verifique se surgiram noticias_coletadas.csv e status_coleta.json.
+Se o workflow falhar por permissão, em Settings → Actions → General → Workflow permissions,
+marque Read and write permissions, se essa opção estiver disponível.
+
+O coletor consulta Google News RSS com seis pesquisas e janela de sete dias.
+Não lê conteúdos integrais, não garante cobertura exaustiva, não confirma nomeações
+e não atribui nomes novos automaticamente a ministérios. O GitHub Actions pode atrasar.
+O histórico mantém no máximo 5.000 registros no CSV; uma futura base de dados
+será necessária para retenção permanente em escala.

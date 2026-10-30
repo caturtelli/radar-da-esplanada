@@ -7,6 +7,7 @@ import streamlit as st
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
 st.title('🏛️ Radar da Esplanada')
 st.caption('Acompanhamento jornalístico da formação do governo federal — primeiro e segundo escalões')
+
 base = Path(__file__).resolve().parent
 if not (base / 'indicacoes.csv').exists():
     st.error('Arquivo indicacoes.csv não encontrado.'); st.stop()
@@ -152,3 +153,36 @@ st.divider()
 st.caption('O catálogo é uma estrutura editorial editável, não uma lista oficial verificada. '
            'O radar mostra apenas informações cadastradas. Menções jornalísticas não equivalem a nomeações confirmadas. '
            'A atualização automática será implementada em etapa posterior.')
+
+# Notícias coletadas são pistas para apuração, não evidências automaticamente validadas.
+st.divider()
+st.subheader('📰 Novas notícias para apuração')
+coletadas_path = base / 'noticias_coletadas.csv'
+status_path = base / 'status_coleta.json'
+if status_path.exists():
+    import json
+    try:
+        status = json.loads(status_path.read_text(encoding='utf-8'))
+        st.caption(f"Última tentativa de coleta (UTC): {status.get('ultima_tentativa_utc', '—')} · "
+                   f"Novas notícias: {status.get('novas_noticias', 0)} · "
+                   f"Total: {status.get('total_armazenado', 0)}")
+        if status.get('falhas'):
+            st.warning(f"Algumas buscas falharam ({len(status['falhas'])}). Consulte o log do GitHub Actions.")
+    except (ValueError, OSError):
+        st.warning('Status da coleta indisponível.')
+if coletadas_path.exists():
+    coletadas = pd.read_csv(coletadas_path, dtype=str, encoding='utf-8-sig').fillna('')
+    st.caption('Resultados de RSS agregados, sujeitos a falsos positivos. A menção de um nome não confirma indicação.')
+    q = st.text_input('Filtrar notícias coletadas por nome, cargo ou termo', key='busca_coleta')
+    if q.strip():
+        coletadas = coletadas[coletadas[['titulo','veiculo','nomes_mencionados','busca']].apply(
+            lambda col: col.str.contains(q.strip(), case=False, regex=False)).any(axis=1)]
+    st.write(f'{len(coletadas)} resultado(s)')
+    for ix, artigo in coletadas.head(100).iterrows():
+        with st.container(border=True):
+            st.markdown(f"**{html.escape(artigo['titulo'])}**")
+            st.caption(f"{artigo['veiculo']} · {artigo['data_publicacao']} · Menções: {artigo['nomes_mencionados'] or 'não identificadas'}")
+            if valid_url(artigo['url']):
+                st.link_button('Abrir notícia ↗', artigo['url'], key=f'coleta_{ix}')
+else:
+    st.info('A primeira coleta ainda não foi executada. No GitHub, abra Actions → Atualizar Radar da Esplanada → Run workflow.')
