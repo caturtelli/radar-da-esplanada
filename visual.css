@@ -1,0 +1,23 @@
+/* Editorial palette, native controls and visible keyboard focus. */
+.stApp {background:#f5f4ef;color:#172c35;font-family:Arial,Helvetica,sans-serif}
+[data-testid="stMainBlockContainer"] {max-width:1400px;padding-top:2.2rem;padding-bottom:3rem}
+h1,h2,h3,h4 {color:#153b3e;letter-spacing:-.035em}
+h1 {font-family:Georgia,serif;font-size:clamp(2.3rem,4vw,3.8rem)!important;line-height:1.08!important}
+[data-testid="stSidebar"] {background:#e9eee9;border-right:1px solid #d2dcd5}
+[data-testid="stSidebar"] h2 {font-size:1.25rem}
+[data-testid="stCaptionContainer"] {color:#53635e}
+[data-testid="stMetric"] {background:#fff;border:1px solid #dce2da;border-top:3px solid #34776a;border-radius:12px;padding:16px 20px}
+[data-testid="stMetricValue"] {font-family:Georgia,serif;color:#153b3e}
+[data-testid="stMetricLabel"] {color:#53635e;font-size:.9rem}
+[data-testid="stMain"] [data-testid="stVerticalBlockBorderWrapper"]>div {background:#fff;border-color:#dce2da!important;border-radius:14px!important}
+[data-testid="stMain"] .stButton button {min-height:50px;border:1px solid #bbcfc4;border-radius:9px;color:#174b42;background:#f4f8f4;text-align:left;justify-content:flex-start;padding:.7rem 1rem;font-weight:600}
+[data-testid="stMain"] .stButton button:hover {background:#e3efe7;border-color:#34776a;color:#123c33}
+.stButton button:focus-visible,.stLinkButton a:focus-visible {outline:3px solid #ba7b28;outline-offset:3px}
+.stLinkButton a {border-radius:8px;border-color:#a4bdb0;color:#174b42}
+[data-testid="stRadio"]>div[role="radiogroup"] {gap:.5rem;flex-wrap:wrap}
+[data-testid="stMain"] [data-testid="stRadio"] label {border:1px solid #cdd9cf;border-radius:8px;padding:.45rem .75rem;background:#fff;min-height:44px}
+[data-testid="stMain"] [data-testid="stRadio"] label:has(input:checked) {background:#deeee2;border-color:#34776a;color:#123c33}
+.radar-masthead {border-top:5px solid #235b4f;border-bottom:1px solid #b9c9bc;padding:.8rem 0;margin-bottom:.4rem;color:#235b4f;font-size:.75rem;font-weight:700;letter-spacing:.18em}
+.radar-footer {border-top:1px solid #bccdbf;padding-top:1.2rem;margin-top:1rem;color:#435b50;font-size:.9rem;line-height:1.8}
+.radar-footer a {color:#235b4f;text-decoration:underline}
+@media(max-width:700px) {[data-testid="stMainBlockContainer"] {padding:1.3rem 1rem} [data-testid="stMetric"] {padding:12px} h1 {font-size:2.4rem!important}}
