@@ -51,7 +51,7 @@ except (OSError, ValueError):
     status = {}
 when = pd.to_datetime(status.get('ultima_tentativa_utc'), errors='coerce', utc=True)
 if pd.notna(when):
-    st.caption('Coleta automática: '+when.tz_convert('America/Sao_Paulo').strftime('%d/%m/%Y às %H:%M')+' · horário de Brasília')
+    st.sidebar.caption('Coleta automática: '+when.tz_convert('America/Sao_Paulo').strftime('%d/%m/%Y às %H:%M')+' · horário de Brasília')
 if pd.notna(when) and pd.Timestamp.now(tz='UTC')-when > pd.Timedelta(hours=1): st.warning('A última coleta registrada tem mais de uma hora. A atualização pode estar atrasada.')
 if status.get('falhas'): st.warning('A última coleta registrou falhas. Parte das fontes pode estar desatualizada.')
 
@@ -83,23 +83,23 @@ with st.sidebar:
     st.header('Buscar e filtrar')
     query = st.text_input('Buscar pessoa, órgão ou notícia', placeholder='Nome, sobrenome ou palavra-chave')
     organs = st.multiselect('Filtrar órgãos', sorted(catalog.orgao.tolist()),placeholder='Todos os órgãos')
-    states = st.multiselect('Natureza da informação', STATUSES,placeholder='Todas as situações')
-    vehicles = st.multiselect('Veículos', sorted({r.get('veiculo','') for r in rows} - {''}),placeholder='Todos os veículos')
-    recent = st.checkbox('Publicadas nas últimas 24 horas')
-    period = st.radio('Período',['Desde o segundo turno','Todo o histórico'])
-    st.caption('Filtros combinados. A data de publicação define a janela de 24 horas; a captura não transforma uma notícia antiga em novidade.')
-    st.caption('Classificação por manchetes. Nomeação noticiada exige checagem oficial. Menções não contam como indicações.')
+    with st.expander('Mais filtros e critérios'):
+        states = st.multiselect('Natureza da informação', STATUSES,placeholder='Todas as situações')
+        vehicles = st.multiselect('Veículos', sorted({r.get('veiculo','') for r in rows} - {''}),placeholder='Todos os veículos')
+        recent = st.checkbox('Publicadas nas últimas 24 horas')
+        period = st.radio('Período',['Desde o segundo turno','Todo o histórico'])
+        st.caption('Filtros combinados. A data de publicação define a janela de 24 horas; a captura não transforma uma notícia antiga em novidade.')
+        st.caption('Classificação por manchetes. Nomeação noticiada exige checagem oficial. Menções não contam como indicações.')
 filtered = filter_rows(rows,query,organs,states,vehicles,recent)
 if period=='Desde o segundo turno':
     from radar_model import since_second_round
     filtered = [r for r in filtered if since_second_round(r)]
 people = sorted(set(curated.get('nome', [])) | {p for r in rows for p in r['pessoas']})
-a,b,c,d=st.columns(4)
-a.metric('Órgãos no catálogo',len(catalog))
-b.metric('Pessoas identificadas',len(people))
-c.metric('Notícias no histórico',len(rows))
-d.metric('Publicadas em 24h',sum(is_recent(r) for r in rows))
-st.divider()
+with st.sidebar.expander('Resumo da cobertura'):
+    st.metric('Órgãos no catálogo',len(catalog))
+    st.metric('Pessoas identificadas',len(people))
+    st.metric('Notícias no histórico',len(rows))
+    st.metric('Publicadas em 24h',sum(is_recent(r) for r in rows))
 
 def valid_url(url):
     try:
