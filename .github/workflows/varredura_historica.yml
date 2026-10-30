@@ -1,0 +1,40 @@
+name: Varredura Historica do Radar
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizacao-radar
+  cancel-in-progress: false
+
+jobs:
+  varredura:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar bibliotecas
+        run: pip install pandas requests feedparser
+
+      - name: Executar varredura historica
+        run: python varredura_historica.py
+
+      - name: Salvar noticias encontradas
+        run: |
+          git config user.name "Radar da Esplanada"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add noticias_coletadas.csv status_coleta.json
+          git diff --cached --quiet || git commit -m "Varredura historica do Radar"
+          git pull --rebase
+          git push
