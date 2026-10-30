@@ -1,0 +1,17 @@
+RADAR DA ESPLANADA — atualização 1: biblioteca de notícias
+
+Arquivos para substituir/adicionar no repositório GitHub:
+- app.py (substituir)
+- indicacoes.csv (substituir; adicionada coluna indicacao_id)
+- noticias.csv (adicionar)
+- requirements.txt (inalterado)
+
+IMPORTANTE:
+1. Envie os três arquivos alterados no mesmo commit para evitar incompatibilidade.
+2. Não remova nem renumere indicacao_id de registros existentes. Para novos registros, use um ID novo e único.
+3. Em noticias.csv, cada linha associa uma reportagem a UMA indicação por indicacao_id.
+   Para associar uma mesma reportagem a várias indicações, crie uma linha por indicação.
+4. Datas de publicação devem usar AAAA-MM-DD quando conhecidas; não foram inventadas datas.
+5. As quatro vinculações históricas existentes foram preservadas. Elas não representam uma coleta completa.
+6. O aplicativo não busca novas matérias automaticamente. A coleta e o histórico incremental são etapas futuras.
+7. A deduplicação na tela usa indicacao_id + URL. Para registrar reportagens diferentes, use URLs diferentes.
