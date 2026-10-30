@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from dataclasses import replace
 from navigation import Route, decode_route, route_params
+from history_bridge import install_history_bridge
 import pandas as pd
 import streamlit as st
 # Cloud sessions may retain imported modules across a repository update.
@@ -20,6 +21,7 @@ from radar_model import read_csv, build_index, filter_rows, is_recent, STATUSES
 from identificar_nomes import norm
 
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
+install_history_bridge()
 BASE = Path(__file__).resolve().parent
 st.markdown('''<style>
 .stApp {background:#f4f6fa}

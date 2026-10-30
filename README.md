@@ -84,8 +84,13 @@ A URL é a fonte de verdade das telas, não o último órgão guardado na sessã
 
 `navigation.py` valida e converte rotas em nomes do catálogo. Slugs removem acentos, usam nomes legíveis e tratam colisões de forma determinística. Identificadores inexistentes apresentam mensagem e seleção segura. Parâmetros externos, como UTM, são preservados.
 
-Callbacks atualizam `st.query_params` uma única vez por ação. A tela lê a URL em cada execução, inclusive nas mudanças recebidas pelo histórico nativo do Streamlit (Voltar/Avançar). Reruns comuns e filtros não reescrevem a rota. Não há JavaScript injetado, acesso à janela pai, nova dependência ou domínio fixo. A implementação foi testada com Streamlit 1.66.1, cuja navegação nativa utiliza pushState e responde a popstate.
+Callbacks atualizam `st.query_params` uma única vez por ação. A tela lê a URL em cada execução, inclusive nas mudanças recebidas pelo histórico nativo do Streamlit (Voltar/Avançar). Reruns comuns e filtros não reescrevem a rota. Não há nova dependência ou domínio fixo. A hospedagem no Community Cloud exige a ponte de histórico descrita abaixo. A implementação foi testada com Streamlit 1.66.1, cuja navegação nativa utiliza pushState e responde a popstate.
 
 Os filtros de busca, veículos, natureza e período continuam pertencendo à sessão: o link compartilha o órgão/pessoa/página, não os filtros do remetente. A categoria da grade é mantida ao abrir e voltar de uma pasta. A aba Pessoas começa pela seleção de um nome, e a seleção abre uma ficha com endereço próprio.
 
 Validação: 20 testes aprovados, incluindo regressões anteriores e testes de rota, query params restaurados para simular Voltar/Avançar, recarga em nova sessão, paginação e URLs inválidas. A verificação dos botões reais do navegador no ambiente publicado deve ocorrer após autorização de publicação. Não foram alterados dados, classificação, coleta ou workflows.
+
+
+### Contêiner do Community Cloud
+
+Na verificação real de Voltar após a primeira publicação, o contêiner externo atualizou a URL sem notificar o roteador da aplicação embutida. `history_bridge.py` instala um componente estático, sem interface e sem comunicação de rede: somente em contêineres de mesma origem ele escuta `popstate`, sincroniza a query na janela da aplicação e despacha o evento nativo do Streamlit. Não cria outro histórico nem intercepta pushState. O listener anterior é removido ao reinstalar o componente. Fora dessa hospedagem ou em origem diferente, a ponte não atua. Nenhuma informação é enviada a outro domínio e nenhuma permissão é alterada.
