@@ -1,94 +1,97 @@
-import streamlit as st
-import pandas as pd
+import html
 from pathlib import Path
 from urllib.parse import urlparse
+import pandas as pd
+import streamlit as st
 
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
 st.title('🏛️ Radar da Esplanada')
-st.caption('Monitoramento de indicações, nomeações e permanências no governo federal')
-
-pasta = Path(__file__).resolve().parent
-arquivo = pasta / 'indicacoes.csv'
-arquivo_noticias = pasta / 'noticias.csv'
-if not arquivo.exists():
-    st.error('Cadastro de indicações não encontrado.')
-    st.stop()
-
-df = pd.read_csv(arquivo, dtype=str, encoding='utf-8-sig').fillna('')
-if 'indicacao_id' not in df.columns:
-    st.error('A coluna indicacao_id não foi encontrada em indicacoes.csv.')
-    st.stop()
-
-colunas_noticias = ['indicacao_id', 'titulo', 'veiculo', 'jornalista', 'data_publicacao', 'url', 'tipo_evidencia', 'observacao']
-if arquivo_noticias.exists():
-    noticias = pd.read_csv(arquivo_noticias, dtype=str, encoding='utf-8-sig').fillna('')
-    for coluna in colunas_noticias:
-        if coluna not in noticias.columns:
-            noticias[coluna] = ''
+st.caption('Acompanhamento jornalístico da formação do governo federal')
+base = Path(__file__).resolve().parent
+if not (base / 'indicacoes.csv').exists():
+    st.error('Arquivo indicacoes.csv não encontrado.'); st.stop()
+df = pd.read_csv(base / 'indicacoes.csv', dtype=str, encoding='utf-8-sig').fillna('')
+news_cols = ['indicacao_id','titulo','veiculo','jornalista','data_publicacao','url','tipo_evidencia','observacao']
+if (base / 'noticias.csv').exists():
+    news = pd.read_csv(base / 'noticias.csv', dtype=str, encoding='utf-8-sig').fillna('')
+    for c in news_cols:
+        if c not in news: news[c] = ''
 else:
-    noticias = pd.DataFrame(columns=colunas_noticias)
+    news = pd.DataFrame(columns=news_cols)
 
-def url_valida(url):
+def valid_url(u):
     try:
-        p = urlparse(str(url).strip())
-        return p.scheme in ('https', 'http') and bool(p.netloc)
-    except ValueError:
-        return False
+        p=urlparse(str(u).strip()); return p.scheme in ('https','http') and bool(p.netloc)
+    except ValueError: return False
 
-st.sidebar.header('Filtros')
-ministerios = sorted(df['ministerio'].unique().tolist())
-ministerios_selecionados = st.sidebar.multiselect('Ministérios e órgãos', ministerios, default=ministerios)
-situacoes = sorted(df['situacao'].unique().tolist())
-situacoes_selecionadas = st.sidebar.multiselect('Situação', situacoes, default=situacoes)
-busca = st.sidebar.text_input('Buscar pessoa ou cargo')
-filtrado = df[df['ministerio'].isin(ministerios_selecionados) & df['situacao'].isin(situacoes_selecionadas)].copy()
-if busca:
-    filtrado = filtrado[
-        filtrado['nome'].str.contains(busca, case=False, na=False, regex=False)
-        | filtrado['cargo'].str.contains(busca, case=False, na=False, regex=False)
-    ]
+st.sidebar.header('Filtrar radar')
+search = st.sidebar.text_input('Buscar nome ou cargo', placeholder='Digite para localizar...')
+statuses = sorted(s for s in df['situacao'].unique() if s)
+selected_statuses = st.sidebar.multiselect('Situação', statuses, default=statuses)
+filtered = df[df['situacao'].isin(selected_statuses)].copy()
+if search.strip():
+    q=search.strip()
+    filtered=filtered[filtered[['nome','cargo','ministerio']].apply(lambda c: c.str.contains(q, case=False, regex=False)).any(axis=1)]
 
-c1, c2, c3, c4 = st.columns(4)
-c1.metric('Movimentações monitoradas', len(filtrado))
-c2.metric('Pessoas', filtrado['nome'].nunique())
-c3.metric('Ministérios e órgãos', filtrado['ministerio'].nunique())
-c4.metric('Reportagens vinculadas', len(noticias[noticias['indicacao_id'].isin(filtrado['indicacao_id'])]))
+m1,m2,m3,m4=st.columns(4)
+m1.metric('Órgãos com registros',filtered['ministerio'].nunique())
+m2.metric('Movimentações',len(filtered))
+m3.metric('Pessoas citadas',filtered['nome'].nunique())
+m4.metric('Reportagens vinculadas',len(news[news['indicacao_id'].isin(filtered['indicacao_id'])]))
 st.divider()
-st.subheader('Indicações em acompanhamento')
 
-if filtrado.empty:
-    st.info('Nenhuma movimentação encontrada com esses filtros.')
+if 'selected_ministry' not in st.session_state:
+    st.session_state.selected_ministry = None
+all_ministries=sorted(filtered['ministerio'].dropna().unique().tolist())
+if st.session_state.selected_ministry not in all_ministries:
+    st.session_state.selected_ministry = None
+
+if st.session_state.selected_ministry is None:
+    st.subheader('Ministérios e órgãos')
+    st.caption('Selecione um cartão para consultar nomes cotados, situação e reportagens. São exibidos os órgãos cadastrados, não necessariamente todos os ministérios existentes.')
+    if not all_ministries: st.info('Nenhum órgão encontrado com os filtros atuais.')
+    for start in range(0,len(all_ministries),3):
+        cols=st.columns(3)
+        for col, ministry in zip(cols,all_ministries[start:start+3]):
+            sub=filtered[filtered['ministerio']==ministry]
+            n=len(news[news['indicacao_id'].isin(sub['indicacao_id'])])
+            with col.container(border=True):
+                st.markdown(f'#### {ministry}')
+                st.caption(f'{sub["nome"].nunique()} pessoa(s) · {len(sub)} movimentação(ões) · {n} notícia(s)')
+                if st.button('Ver indicações →',key=f'go_{ministry}',use_container_width=True):
+                    st.session_state.selected_ministry=ministry
+                    st.rerun()
 else:
-    for _, item in filtrado.iterrows():
-        relacionadas = noticias[noticias['indicacao_id'] == item['indicacao_id']].copy()
-        relacionadas = relacionadas.drop_duplicates(subset=['indicacao_id', 'url'])
-        relacionadas = relacionadas.sort_values('data_publicacao', ascending=False, kind='stable')
-        with st.expander(f"{item['nome']} — {item['cargo']} · {len(relacionadas)} notícia(s)"):
-            st.write('**Ministério/órgão:**', item['ministerio'])
-            st.write('**Movimentação:**', item['tipo_movimentacao'])
-            st.write('**Situação:**', item['situacao'])
-            st.markdown('#### Evidências favoráveis')
-            st.write(item['evidencia_favoravel'] or 'Ainda não registradas.')
-            st.markdown('#### Evidências contrárias')
-            st.write(item['evidencia_contraria'] or 'Ainda não registradas.')
-            st.markdown(f"#### Notícias e fontes ({len(relacionadas)})")
-            if relacionadas.empty:
-                st.info('Ainda não há reportagens vinculadas a esta indicação.')
-            else:
-                for _, noticia in relacionadas.iterrows():
-                    titulo = noticia['titulo'] or 'Reportagem sem título cadastrado'
-                    meta = ' · '.join(p for p in [noticia['veiculo'], noticia['jornalista'], noticia['data_publicacao']] if p)
-                    st.markdown(f'**{titulo}**')
-                    if meta:
-                        st.caption(meta)
-                    if noticia['tipo_evidencia']:
-                        st.write('**Relação com a indicação:**', noticia['tipo_evidencia'])
-                    if noticia['observacao']:
-                        st.write(noticia['observacao'])
-                    if url_valida(noticia['url']):
-                        st.link_button('Ler reportagem ↗', noticia['url'], key=f"link_{item['indicacao_id']}_{_}")
-                    else:
-                        st.warning('Link ausente ou inválido.')
+    ministry=st.session_state.selected_ministry
+    if st.button('← Voltar a todos os ministérios'):
+        st.session_state.selected_ministry=None
+        st.rerun()
+    st.subheader(ministry)
+    sub=filtered[filtered['ministerio']==ministry].copy()
+    st.caption(f'{sub["nome"].nunique()} pessoa(s) monitorada(s) · {len(sub)} movimentação(ões)')
+    if sub.empty:
+        st.info('Nenhum registro para este órgão com os filtros atuais.')
+    else:
+        st.markdown('### Visão comparativa')
+        st.dataframe(sub[['nome','cargo','situacao','tipo_movimentacao']].rename(columns={'nome':'Nome','cargo':'Cargo','situacao':'Situação','tipo_movimentacao':'Movimentação'}),hide_index=True,use_container_width=True)
+        st.markdown('### Detalhes e fontes')
+        for _,item in sub.iterrows():
+            related=news[news['indicacao_id']==item['indicacao_id']].drop_duplicates(subset=['indicacao_id','url']).sort_values('data_publicacao',ascending=False,kind='stable')
+            with st.expander(f"{item['nome']} — {item['cargo']} · {len(related)} notícia(s)"):
+                st.write('**Situação:**',item['situacao'])
+                st.write('**Movimentação:**',item['tipo_movimentacao'])
+                st.write('**Evidências favoráveis:**',item['evidencia_favoravel'] or 'Não cadastradas.')
+                st.write('**Evidências contrárias:**',item['evidencia_contraria'] or 'Não cadastradas.')
+                st.markdown('#### Reportagens relacionadas')
+                if related.empty: st.info('Nenhuma reportagem cadastrada para esta indicação.')
+                for ix,article in related.iterrows():
+                    st.markdown(f"**{html.escape(article['titulo'] or 'Reportagem sem título')}**")
+                    st.caption(' · '.join(x for x in [article['veiculo'],article['jornalista'],article['data_publicacao']] if x))
+                    if article['tipo_evidencia']: st.write('**Tipo de evidência:**',article['tipo_evidencia'])
+                    if article['observacao']: st.write(article['observacao'])
+                    if valid_url(article['url']): st.link_button('Ler reportagem ↗',article['url'],key=f"article_{item['indicacao_id']}_{ix}")
+                    else: st.warning('Link não cadastrado ou inválido.')
                     st.divider()
 
-st.caption('O Radar reúne informações jornalísticas em apuração. Citações no noticiário não equivalem a nomeações confirmadas. A biblioteca exibe notícias cadastradas, não uma busca em tempo real.')
+st.divider()
+st.caption('O radar mostra apenas informações cadastradas. Menções jornalísticas não equivalem a nomeações confirmadas. A atualização automática será implementada em etapa posterior.')
