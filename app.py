@@ -274,3 +274,4 @@ st.divider()
 st.caption('Cobertura por RSS: pode haver lacunas. Sem notícia encontrada não significa ausência de negociação.')
 st.caption('Triagem automática revisável · fontes originais preservadas · sem pontuação automática de credibilidade ou probabilidade de nomeação.')
 
+st.markdown('**Desenvolvido por Camila Tereza.**  \nQuer falar comigo? Me escreve: [caturtelli@gmail.com](mailto:caturtelli@gmail.com)')
