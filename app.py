@@ -1,13 +1,24 @@
 import html
+import json
 from pathlib import Path
 from urllib.parse import urlparse
 import pandas as pd
 import streamlit as st
+from classificar_noticias import associate
 
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
-st.title('🏛️ Radar da Esplanada')
-st.caption('Acompanhamento jornalístico da formação do governo federal — primeiro e segundo escalões')
-
+st.markdown("""<style>
+.stApp {background:#f5f7fb;color:#17243b}
+.block-container {padding-top:1.6rem;max-width:1480px}
+h1,h2,h3 {color:#142b4b!important;letter-spacing:-.025em}
+[data-testid="stMetric"] {background:white;padding:18px;border-radius:14px;border:1px solid #dce4ed;box-shadow:0 2px 10px #142b4b08}
+[data-testid="stVerticalBlockBorderWrapper"] {background:white;border-radius:16px;border-color:#dce4ed!important}
+.stButton button {border-radius:10px;font-weight:600}
+.radar-eyebrow {font-size:.8rem;letter-spacing:.13em;color:#4b698e;font-weight:700}
+.radar-title {font-size:2.6rem;font-weight:800;color:#142b4b;line-height:1.2;margin:.25rem 0}
+.radar-subtitle {color:#5e7087;margin-bottom:1.2rem}
+</style>""",unsafe_allow_html=True)
+st.markdown('<div class="radar-eyebrow">INTELIGÊNCIA JORNALÍSTICA · BRASÍLIA</div><div class="radar-title">🏛️ Radar da Esplanada</div><div class="radar-subtitle">Formação do governo federal · primeiro e segundo escalões</div>',unsafe_allow_html=True)
 base = Path(__file__).resolve().parent
 if not (base / 'indicacoes.csv').exists():
     st.error('Arquivo indicacoes.csv não encontrado.'); st.stop()
@@ -19,6 +30,23 @@ if (base / 'noticias.csv').exists():
         if c not in news: news[c] = ''
 else:
     news = pd.DataFrame(columns=news_cols)
+
+collected_path = base / 'noticias_coletadas.csv'
+if collected_path.exists():
+    try:
+        collected = pd.read_csv(collected_path, dtype=str, encoding='utf-8-sig').fillna('')
+    except (ValueError, pd.errors.EmptyDataError, UnicodeError) as exc:
+        st.warning(f'Não foi possível ler notícias coletadas: {exc}')
+        collected = pd.DataFrame()
+else:
+    collected = pd.DataFrame()
+status_path = base / 'status_coleta.json'
+status = {}
+if status_path.exists():
+    try:
+        status = json.loads(status_path.read_text(encoding='utf-8'))
+    except (ValueError, OSError):
+        status = {}
 
 def valid_url(u):
     try:
@@ -66,6 +94,17 @@ if missing:
 catalog = catalog.drop_duplicates(subset=['orgao'], keep='first')
 org_names = catalog['orgao'].dropna().loc[lambda x: x.str.strip() != ''].tolist()
 
+# Associação calculada em cada leitura: novas notícias entram sem alterar o coletor.
+if not collected.empty and 'titulo' in collected.columns:
+    collected['orgaos_associados'] = collected['titulo'].map(
+        lambda title: associate(title, org_names))
+    collected['qtd_orgaos'] = collected['orgaos_associados'].map(len)
+else:
+    collected['orgaos_associados'] = pd.Series(dtype=object)
+    collected['qtd_orgaos'] = pd.Series(dtype=int)
+
+st.sidebar.header('Navegação')
+view = st.sidebar.radio('Visualizar', ['Ministérios', 'Notícias coletadas'], index=0)
 st.sidebar.header('Filtrar radar')
 level_options = ['Primeiro escalão / direção', 'Segundo escalão', 'A classificar']
 selected_levels = st.sidebar.multiselect('Escalão', level_options, default=level_options)
@@ -79,10 +118,10 @@ if search.strip():
     filtered=filtered[filtered[['nome','cargo','ministerio']].apply(lambda c: c.str.contains(q, case=False, regex=False)).any(axis=1)]
 
 m1,m2,m3,m4=st.columns(4)
-m1.metric('Órgãos com registros',filtered['ministerio'].nunique())
-m2.metric('Movimentações',len(filtered))
-m3.metric('Pessoas citadas',filtered['nome'].nunique())
-m4.metric('Reportagens vinculadas',len(news[news['indicacao_id'].isin(filtered['indicacao_id'])]))
+m1.metric('Órgãos no catálogo',len(catalog))
+m2.metric('Pessoas citadas',filtered['nome'].nunique())
+m3.metric('Notícias coletadas',len(collected))
+m4.metric('Última coleta (UTC)', str(status.get('ultima_tentativa_utc','Sem registro'))[11:16])
 st.divider()
 
 if 'selected_ministry' not in st.session_state:
@@ -92,10 +131,25 @@ all_ministries = sorted(set(org_names) if show_empty else set(filtered['minister
 if st.session_state.selected_ministry not in all_ministries:
     st.session_state.selected_ministry = None
 
-if st.session_state.selected_ministry is None:
+if view == 'Notícias coletadas':
+    st.subheader('Últimas notícias coletadas')
+    st.caption('Associações automáticas baseadas apenas nas manchetes, sem confirmação de nomeações.')
+    only_associated = st.checkbox('Mostrar apenas notícias associadas a algum órgão', value=False)
+    if collected.empty:
+        st.info('Nenhuma notícia automática encontrada neste pacote. A coleta continua sendo responsabilidade do workflow existente.')
+    else:
+        date_candidates = [c for c in ['data_publicacao','publicado_em','published','data'] if c in collected.columns]
+        display = collected[collected['qtd_orgaos'] > 0].copy() if only_associated else collected.copy()
+        display['Órgãos sugeridos'] = display['orgaos_associados'].map(lambda v: '; '.join(v))
+        display['_data'] = pd.to_datetime(display['data_publicacao'], errors='coerce', utc=True)
+        display = display.sort_values('_data', ascending=False, kind='stable')
+        cols = [c for c in ['titulo','veiculo','data_publicacao','Órgãos sugeridos','url'] if c in display.columns]
+        st.dataframe(display[cols].head(500), hide_index=True, use_container_width=True,
+                     column_config={'url': st.column_config.LinkColumn('Ler reportagem')})
+elif st.session_state.selected_ministry is None:
     st.subheader('Ministérios e órgãos')
     st.caption('Estrutura de referência editável; um cartão vazio não significa ausência de negociações.')
-    cat_filter = st.selectbox('Categoria de órgão', ['Todas'] + sorted(set(catalog['categoria']) - {''}))
+    cat_filter = st.selectbox('Categoria de órgão', ['Ministério', 'Todas'] + sorted(set(catalog['categoria']) - {'', 'Ministério'}))
     if cat_filter != 'Todas':
         all_ministries = [o for o in all_ministries
                           if o in set(catalog.loc[catalog['categoria'] == cat_filter, 'orgao'])]
@@ -106,12 +160,14 @@ if st.session_state.selected_ministry is None:
         for col, ministry in zip(cols,all_ministries[start:start+3]):
             sub=filtered[filtered['ministerio']==ministry]
             n=len(news[news['indicacao_id'].isin(sub['indicacao_id'])])
+            auto_n = int(collected['orgaos_associados'].map(lambda v: ministry in v).sum()) if not collected.empty else 0
             with col.container(border=True):
                 st.markdown(f'#### {ministry}')
                 superior = catalog.loc[catalog['orgao'] == ministry, 'orgao_superior']
                 if not superior.empty and superior.iloc[0]:
                     st.caption(f'Vinculado a: {superior.iloc[0]}')
-                st.caption(f'{sub["nome"].nunique()} pessoa(s) · {len(sub)} movimentação(ões) · {n} notícia(s)')
+                st.caption(f'{sub["nome"].nunique()} pessoa(s) cadastrada(s) · {n} fonte(s) verificadas')
+                st.caption(f'📰 {auto_n} notícia(s) associada(s) automaticamente · não verificadas')
                 if st.button('Ver indicações →',key=f'go_{ministry}',use_container_width=True):
                     st.session_state.selected_ministry=ministry
                     st.rerun()
@@ -123,8 +179,25 @@ else:
     st.subheader(ministry)
     sub=filtered[filtered['ministerio']==ministry].copy()
     st.caption(f'{sub["nome"].nunique()} pessoa(s) monitorada(s) · {len(sub)} movimentação(ões)')
+    auto_related = collected[collected['orgaos_associados'].map(lambda v: ministry in v)].copy() if not collected.empty else collected.copy()
+    st.markdown('### Notícias associadas automaticamente')
+    st.caption('Triagem por manchete. Pode conter falsos positivos; não equivale a indicação confirmada.')
+    if auto_related.empty:
+        st.info('Nenhuma notícia associada automaticamente a este órgão.')
+    else:
+        auto_related['_data'] = pd.to_datetime(auto_related['data_publicacao'], errors='coerce', utc=True)
+        auto_related = auto_related.sort_values('_data', ascending=False, kind='stable')
+        for _, art in auto_related.head(60).iterrows():
+            title = html.escape(str(art.get('titulo','')))
+            vehicle = html.escape(str(art.get('veiculo','')))
+            date = html.escape(str(art.get('data_publicacao','')))
+            if valid_url(art.get('url','')):
+                st.markdown(f'**{title}**  \n{vehicle} · {date} · [Ler reportagem]({art["url"]})')
+            else:
+                st.write(title, vehicle, date)
+    st.divider()
     if sub.empty:
-        st.info('Nenhum registro para este órgão com os filtros atuais.')
+        st.info('Nenhuma indicação cadastrada/verificada para este órgão.')
     else:
         st.markdown('### Visão comparativa')
         st.caption('Classificação inicial automática por título do cargo; revise no campo escalao do CSV quando necessário.')
@@ -150,39 +223,4 @@ else:
                     st.divider()
 
 st.divider()
-st.caption('O catálogo é uma estrutura editorial editável, não uma lista oficial verificada. '
-           'O radar mostra apenas informações cadastradas. Menções jornalísticas não equivalem a nomeações confirmadas. '
-           'A atualização automática será implementada em etapa posterior.')
-
-# Notícias coletadas são pistas para apuração, não evidências automaticamente validadas.
-st.divider()
-st.subheader('📰 Novas notícias para apuração')
-coletadas_path = base / 'noticias_coletadas.csv'
-status_path = base / 'status_coleta.json'
-if status_path.exists():
-    import json
-    try:
-        status = json.loads(status_path.read_text(encoding='utf-8'))
-        st.caption(f"Última tentativa de coleta (UTC): {status.get('ultima_tentativa_utc', '—')} · "
-                   f"Novas notícias: {status.get('novas_noticias', 0)} · "
-                   f"Total: {status.get('total_armazenado', 0)}")
-        if status.get('falhas'):
-            st.warning(f"Algumas buscas falharam ({len(status['falhas'])}). Consulte o log do GitHub Actions.")
-    except (ValueError, OSError):
-        st.warning('Status da coleta indisponível.')
-if coletadas_path.exists():
-    coletadas = pd.read_csv(coletadas_path, dtype=str, encoding='utf-8-sig').fillna('')
-    st.caption('Resultados de RSS agregados, sujeitos a falsos positivos. A menção de um nome não confirma indicação.')
-    q = st.text_input('Filtrar notícias coletadas por nome, cargo ou termo', key='busca_coleta')
-    if q.strip():
-        coletadas = coletadas[coletadas[['titulo','veiculo','nomes_mencionados','busca']].apply(
-            lambda col: col.str.contains(q.strip(), case=False, regex=False)).any(axis=1)]
-    st.write(f'{len(coletadas)} resultado(s)')
-    for ix, artigo in coletadas.head(100).iterrows():
-        with st.container(border=True):
-            st.markdown(f"**{html.escape(artigo['titulo'])}**")
-            st.caption(f"{artigo['veiculo']} · {artigo['data_publicacao']} · Menções: {artigo['nomes_mencionados'] or 'não identificadas'}")
-            if valid_url(artigo['url']):
-                st.link_button('Abrir notícia ↗', artigo['url'], key=f'coleta_{ix}')
-else:
-    st.info('A primeira coleta ainda não foi executada. No GitHub, abra Actions → Atualizar Radar da Esplanada → Run workflow.')
+st.caption('Catálogo editorial, sujeito a revisão. Notícias coletadas não são nomeações confirmadas. Atualização automática executada por workflow separado.')
