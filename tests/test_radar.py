@@ -112,3 +112,10 @@ def test_real_corpus_names_in_multiple_ministries():
         assert person in organ_people([r for r in rows if org in r['orgaos']],curated,org)
     justice=organ_people([r for r in rows if 'Ministério da Justiça e Segurança Pública' in r['orgaos']],curated,'Ministério da Justiça e Segurança Pública')
     assert 'Daniel Vorcaro' not in justice
+
+
+def test_policy_topics_are_not_people():
+    candidates=registry(['Defesa de Lula pode mudar após eleições','Saúde de Lula é tema de debate','Carlos Fávaro pode voltar ao Ministério da Agricultura'])
+    assert 'Defesa de Lula' not in candidates
+    assert 'Saúde de Lula' not in candidates
+    assert 'Carlos Fávaro' in candidates
