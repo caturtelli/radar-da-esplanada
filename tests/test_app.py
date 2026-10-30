@@ -22,6 +22,8 @@ def test_home_cards_and_round_trip():
     assert app.radio[0].value=='Pessoas'
     assert app.selectbox(key='person_choice').value=='Rafael Fonteles'
     app.radio[0].set_value('Ministérios e órgãos').run()
+    assert len([b for b in app.button if b.key and b.key.startswith('open_org_')])==31
+    app.button(key='open_org_Ministério da Fazenda').click().run()
     app.button(key='back_org').click().run()
     assert not app.exception
     assert len([b for b in app.button if b.key and b.key.startswith('open_org_')])==31
@@ -33,3 +35,4 @@ def test_home_cards_and_round_trip():
         assert not app.exception,view
     app.sidebar.text_input[0].set_value('Haddad').run()
     assert not app.exception
+
