@@ -9,6 +9,14 @@ def test_home_cards_and_round_trip():
         del identificar_nomes.ENGINE_VERSION
     app=AppTest.from_file(str(Path(__file__).resolve().parents[1]/'app.py'),default_timeout=120).run()
     assert not app.exception
+    assert any(m.label=='Última coleta bem-sucedida' for m in app.metric)
+    assert any(m.label=='Última notícia acrescentada' for m in app.metric)
+    app.button(key='all_candidates').click().run()
+    assert not app.exception
+    assert app.radio[0].value=='Cotados para ministro'
+    assert app.query_params.get('tela')=='cotados'
+    assert any('Cotado para ministro' in m.value for m in app.markdown)
+    app.radio[0].set_value('Ministérios e órgãos').run()
     assert app.radio[0].value=='Ministérios e órgãos'
     cards=[b for b in app.button if b.key and b.key.startswith('open_org_')]
     assert len(cards)==31
@@ -35,4 +43,5 @@ def test_home_cards_and_round_trip():
         assert not app.exception,view
     app.sidebar.text_input[0].set_value('Haddad').run()
     assert not app.exception
+
 

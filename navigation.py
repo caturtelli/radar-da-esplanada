@@ -10,6 +10,7 @@ import unicodedata
 
 VIEWS = {
     'ministerios': 'Ministérios e órgãos',
+    'cotados': 'Cotados para ministro',
     'pessoas': 'Pessoas',
     'movimentacoes': 'Últimas movimentações',
     'noticias': 'Todas as notícias',
@@ -89,3 +90,4 @@ def route_params(route, orgs, people, existing=None):
     if route.category!='Ministérios':
         params['categoria']={v:k for k,v in CATEGORIES.items()}[route.category]
     return params
+
