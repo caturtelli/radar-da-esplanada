@@ -13,11 +13,11 @@ import importlib
 import identificar_nomes as name_engine
 import classificar_noticias as organ_engine
 import radar_model as radar_engine
-if getattr(name_engine, 'ENGINE_VERSION', None) != '2.1.3':
+if getattr(name_engine, 'ENGINE_VERSION', None) != '2.1.4' or getattr(radar_engine, 'ENGINE_VERSION', None) != '2.2.0':
     importlib.reload(organ_engine)
     importlib.reload(name_engine)
     importlib.reload(radar_engine)
-from radar_model import read_csv, build_index, filter_rows, is_recent, STATUSES
+from radar_model import read_csv, build_index, filter_rows, is_recent, STATUSES, minister_candidates
 from identificar_nomes import norm
 
 st.set_page_config(page_title='Radar da Esplanada', page_icon='🏛️', layout='wide')
@@ -35,11 +35,12 @@ def load_data(signature, engine_version):
     sources = read_csv(BASE,'noticias.csv')
     catalog = read_csv(BASE,'catalogo_orgaos.csv')
     collected = read_csv(BASE,'noticias_coletadas.csv')
-    return curated, sources, catalog, build_index(collected,curated,catalog)
+    rows = build_index(collected,curated,catalog)
+    return curated, sources, catalog, rows, minister_candidates(rows, catalog)
 
 files = ['indicacoes.csv','noticias.csv','catalogo_orgaos.csv','noticias_coletadas.csv']
 try:
-    curated, sources, catalog, rows = load_data(tuple((BASE/f).stat().st_mtime_ns if (BASE/f).exists() else 0 for f in files), name_engine.ENGINE_VERSION)
+    curated, sources, catalog, rows, candidates = load_data(tuple((BASE/f).stat().st_mtime_ns if (BASE/f).exists() else 0 for f in files), (name_engine.ENGINE_VERSION, radar_engine.ENGINE_VERSION))
 except (OSError, ValueError, AttributeError) as exc:
     st.error(f'Não foi possível carregar o radar: {exc}'); st.stop()
 if catalog.empty:
@@ -50,10 +51,28 @@ try:
 except (OSError, ValueError):
     status = {}
 when = pd.to_datetime(status.get('ultima_tentativa_utc'), errors='coerce', utc=True)
-if pd.notna(when):
-    st.sidebar.caption('Coleta automática: '+when.tz_convert('America/Sao_Paulo').strftime('%d/%m/%Y às %H:%M')+' · horário de Brasília')
+def local_time(value):
+    stamp = pd.to_datetime(value, errors='coerce', utc=True)
+    return stamp.tz_convert('America/Sao_Paulo').strftime('%d/%m às %H:%M') if pd.notna(stamp) else 'Não registrada'
+
+last_success = status.get('ultima_coleta_sucesso_utc')
+if not last_success and not status.get('falhas'):
+    last_success = status.get('ultima_tentativa_utc')
+captured = [pd.to_datetime(r.get('capturado_em'), errors='coerce', utc=True) for r in rows]
+captured = [d for d in captured if pd.notna(d)]
+last_news = status.get('ultima_noticia_encontrada_utc') or (max(captured).isoformat() if captured else None)
+with st.container(border=True):
+    col1, col2, col3 = st.columns(3)
+    col1.metric('Última coleta bem-sucedida', local_time(last_success))
+    col2.metric('Última notícia acrescentada', local_time(last_news))
+    col3.metric('Novas na última coleta', status.get('novas_noticias', 0))
+    st.caption('Horário de Brasília · coleta prevista a cada 30 minutos, sujeita a atrasos do agendador. Uma coleta sem notícias novas não significa falha.')
+st.sidebar.caption('Última tentativa de coleta: '+local_time(status.get('ultima_tentativa_utc'))+' · Brasília')
+if status.get('orgaos_consultados'):
+    st.sidebar.caption(f'{status["orgaos_consultados"]} órgãos pesquisados · {status.get("consultas_com_sucesso",0)}/{status.get("consultas",0)} consultas bem-sucedidas')
 if pd.notna(when) and pd.Timestamp.now(tz='UTC')-when > pd.Timedelta(hours=1): st.warning('A última coleta registrada tem mais de uma hora. A atualização pode estar atrasada.')
 if status.get('falhas'): st.warning('A última coleta registrou falhas. Parte das fontes pode estar desatualizada.')
+if status.get('consultas_saturadas'): st.warning('Algumas buscas atingiram o limite do RSS; a cobertura desses resultados pode ter lacunas.')
 
 all_people=sorted(set(curated.get('nome', [])) | {p for r in rows for p in r['pessoas']})
 org_names=catalog.orgao.tolist()
@@ -78,7 +97,7 @@ def change_category():
 # Updating widget state before construction also clears stale details from the prior route.
 st.session_state.radar_view=route.view
 st.session_state.selected_org=route.org
-view=st.radio('Navegar pelo Radar',['Ministérios e órgãos','Pessoas','Últimas movimentações','Todas as notícias','Cadastro editorial'],horizontal=True,label_visibility='collapsed',key='radar_view',on_change=change_view)
+view=st.radio('Navegar pelo Radar',['Ministérios e órgãos','Cotados para ministro','Pessoas','Últimas movimentações','Todas as notícias','Cadastro editorial'],horizontal=True,label_visibility='collapsed',key='radar_view',on_change=change_view)
 with st.sidebar:
     st.header('Buscar e filtrar')
     query = st.text_input('Buscar pessoa, órgão ou notícia', placeholder='Nome, sobrenome ou palavra-chave')
@@ -94,6 +113,10 @@ filtered = filter_rows(rows,query,organs,states,vehicles,recent)
 if period=='Desde o segundo turno':
     from radar_model import since_second_round
     filtered = [r for r in filtered if since_second_round(r)]
+visible_urls = {r.get('url') for r in filtered}
+visible_candidates = [c for c in candidates if c['fonte'].get('url') in visible_urls]
+candidate_people = {c['nome'] for c in visible_candidates}
+candidate_sources = {(c['nome'], c['fonte'].get('url')) for c in visible_candidates}
 people = sorted(set(curated.get('nome', [])) | {p for r in rows for p in r['pessoas']})
 with st.sidebar.expander('Resumo da cobertura'):
     st.metric('Órgãos no catálogo',len(catalog))
@@ -112,6 +135,8 @@ def article(row, person=None):
         vehicle=str(row.get('veiculo',''))
         while vehicle and title.endswith(' - '+vehicle): title=title[:-len(' - '+vehicle)]
         st.markdown('**'+title+'**')
+        if any((p,row.get('url')) in candidate_sources for p in row.get('pessoas', [])):
+            st.badge('Cotado para ministro', color='orange')
         state = row.get('estados',{}).get(person,row.get('situacao','Registro editorial'))
         date=pd.to_datetime(row.get('data_publicacao',''),errors='coerce',utc=True)
         published=date.tz_convert('America/Sao_Paulo').strftime('%d/%m/%Y · %H:%M') if pd.notna(date) else 'Data não informada'
@@ -145,7 +170,31 @@ def editorial(items):
             related=sources[sources.indicacao_id == item.indicacao_id] if not sources.empty else sources
             for row in related.to_dict('records'): article(row)
 
-if view=='Últimas movimentações':
+def candidate_cards(items, prefix):
+    if not items:
+        st.info('Nenhum nome com cotação ministerial explícita encontrado nos filtros atuais.')
+        return
+    for i, candidate in enumerate(items):
+        with st.container(border=True):
+            st.markdown('#### '+candidate['nome'])
+            st.badge('Cotado para ministro', color='orange')
+            st.write(candidate['orgao'])
+            st.caption(candidate['situacao']+' · '+local_time(candidate['fonte'].get('data_publicacao'))+' · '+candidate['fonte'].get('veiculo',''))
+            st.write(candidate['fonte'].get('titulo', ''))
+            if valid_url(candidate['fonte'].get('url')):
+                st.link_button('Ler reportagem que sustenta a cotação ↗', candidate['fonte']['url'])
+            st.button('Abrir ficha de '+candidate['nome'], key=prefix+str(i), on_click=navigate,
+                      args=(Route(view='Pessoas',person=candidate['nome'],category=route.category),))
+
+def candidate_caption():
+    st.caption('Cotação, negociação ou convite noticiado para o comando de um ministério. Triagem por manchetes, sujeita a revisão; não confirma nomeação. Negativas e nomeações posteriores para a mesma pessoa e pasta retiram o destaque. Os filtros da barra lateral se aplicam.')
+
+if view=='Cotados para ministro':
+    st.subheader('Cotados para ministro')
+    candidate_caption()
+    st.caption(f'{len({c["nome"] for c in visible_candidates})} pessoa(s) · ordenadas pela reportagem mais recente')
+    candidate_cards(visible_candidates, 'candidate_full_')
+elif view=='Últimas movimentações':
     st.subheader('Últimas movimentações')
     st.caption('Novas publicações não equivalem a novas confirmações ou mudanças efetivas de situação.')
     st.caption('Somente notícias com indícios de movimentação; simples menções ficam em Todas as notícias.')
@@ -167,6 +216,9 @@ elif view=='Pessoas':
             st.info('Selecione uma pessoa para abrir sua ficha e obter um link direto.')
         else:
             st.subheader(person)
+            if person in candidate_people:
+                st.badge('Cotado para ministro', color='orange')
+                st.caption('Pastas citadas: '+' · '.join(c['orgao'] for c in visible_candidates if c['nome']==person))
             related=[r for r in filtered if person in r['pessoas']]
             st.caption(f'{len(related)} reportagem(ns) nos filtros atuais · {len({r.get("veiculo") for r in related})} veículo(s); veículos distintos não significam confirmações independentes.')
             st.markdown('#### Registros editoriais')
@@ -194,6 +246,8 @@ elif view=='Ministérios e órgãos':
             for person,items in names.items():
                 with st.container(border=True):
                     st.markdown('#### '+person)
+                    if any(c['nome']==person and c['orgao']==org for c in visible_candidates):
+                        st.badge('Cotado para ministro', color='orange')
                     situations=sorted({r['estados'].get(person,'Menção') for r in items})
                     st.caption(' · '.join(situations) if situations else 'Registro editorial')
                     st.button('Abrir ficha de '+person,key='org_person_'+person,on_click=navigate,args=(Route(view='Pessoas',person=person,category=route.category),))
@@ -207,6 +261,11 @@ elif view=='Ministérios e órgãos':
         st.markdown('### Todas as reportagens deste órgão')
         articles(related,key='org_news_'+org)
     else:
+        st.subheader('Cotados para ministro')
+        candidate_caption()
+        candidate_cards(visible_candidates[:6], 'candidate_home_')
+        st.button('Ver todos os cotados para ministro →', key='all_candidates', on_click=navigate,
+                  args=(Route(view='Cotados para ministro',category=route.category),))
         st.subheader('Escolha um ministério ou órgão')
         st.caption('Clique no nome do cartão para ver pessoas, movimentações e fontes.')
         st.session_state.org_category=route.category
@@ -261,3 +320,4 @@ st.caption('Cobertura por RSS: pode haver lacunas. Sem notícia encontrada não 
 st.caption('Triagem automática revisável · fontes originais preservadas · sem pontuação automática de credibilidade ou probabilidade de nomeação.')
 
 st.markdown('<div class="radar-footer"><strong>Desenvolvido por Camila Tereza.</strong><br>Quer falar comigo? Me escreve: <a href="mailto:caturtelli@gmail.com">caturtelli@gmail.com</a></div>', unsafe_allow_html=True)
+

@@ -4,7 +4,7 @@ import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 
-ENGINE_VERSION = '2.1.3'
+ENGINE_VERSION = '2.1.4'
 
 SEEDS = ['Rafael Fonteles', 'Camilo Santana', 'Simone Tebet', 'Wagner Moura',
          'Margareth Menezes', 'Pierpaolo Bottini', 'Luiz Marinho', 'André Janones',
@@ -30,7 +30,8 @@ BLOCK = {'ministerio','secretaria','banco','governo','federal','republica','civi
          'brasileiro','eleicoes','urna','urnas','presidente','agencia','fundo','central',
          'defesa','saude','cultura','educacao','previdencia','esporte','turismo',
          'comunicacoes','ambiente','planejamento','gestao','relacoes','direitos',
-         'agricultura','transportes','busca','retorno','negocia','formacao','conversa','mantem'}
+         'agricultura','transportes','busca','retorno','negocia','formacao','conversa','mantem',
+         'sucessao','outro','canal','favoritos','mercado','financeiro','olho'}
 
 @lru_cache(maxsize=20000)
 def norm(t):
@@ -95,13 +96,19 @@ def person_context(title, person, registered=()):
     reference=r'(?:advogad[oa]|aliad[oa]|filh[oa]|marido|esposa|irmao)\s+d[eo]\s+'
     if re.search(reference+r'(?:'+re.escape(norm(person))+'|'+re.escape(norm(person.split()[-1]))+r')\b',norm(title)):
         return ''
+    # An explicit coordinated pair shares one plural predicate and destination.
+    pair = re.match(r'^(.+?)\s+e\s+(.+?)\s+((?:sao|estao|foram)\s+(?:cotad[oa]s|sondad[oa]s|convidad[oa]s|indicad[oa]s)\b.*)', norm(title))
+    if pair:
+        first, second = find_people(pair[1], registered), find_people(pair[2], registered)
+        if len(first) == len(second) == 1 and first != second and person in first + second:
+            return person + ' ' + pair[3]
     return _person_context(str(title),person,tuple(registered))
 
 def status_from_title(title, person=None, registered=()):
     t = norm(person_context(title, person, registered) if person else title)
     if not t:
         return 'Menção'
-    if re.search(r'\b(nao foi nomead[oa]|nao sera|nao recebeu|nao houve|nega|negou|descarta|descartou|recusa|recusou|desmente)\b', t):
+    if re.search(r'\b(nao foi nomead[oa]|nao sera|nao recebeu|nao houve|nao quer|nao pretende|nega|negou|descarta|descartou|recusa|recusou|rejeita|rejeitou|desistiu|desmente)\b', t):
         return 'Negativa'
     if re.search(r'\b(sinaliza permanencia|sinaliza manutencao|pode|deve|podera|seria|cotad[oa]s?|especula|favorit[oa]s?|sondad[oa]s?|disputa)\b', t):
         return 'Especulação'
@@ -125,3 +132,4 @@ def group_news(rows, registered=()):
         for name in names:
             groups[name].append(row)
     return dict(groups), unmatched
+

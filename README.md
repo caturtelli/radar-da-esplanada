@@ -97,3 +97,37 @@ Na verificação real de Voltar após a primeira publicação, o contêiner exte
 
 
 O contêiner também pode responder à restauração com `pushState` para a mesma URL, apagando a pilha de Avançar. A ponte transforma somente pushes para o endereço já atual em `replaceState`; novos destinos continuam criando entradas normais. A instalação remove a ponte anterior e a limpeza restaura o método original. Um teste JavaScript isolado simula Voltar, o eco do contêiner, Avançar, nova navegação e reinstalação, sem acessar um navegador real.
+
+
+## Coleta recorrente e cotados para ministro
+
+A coleta programada pesquisa os 79 órgãos do catálogo e dez consultas gerais
+(89 consultas), com janela móvel de sete dias e quatro requisições simultâneas.
+O agendamento é a cada 30 minutos, nos minutos 17 e 47; o GitHub Actions pode
+atrasar as execuções. `python coletar_noticias.py` permite executar manualmente.
+O histórico não tem mais corte de 5.000 linhas: URLs novas são acrescentadas,
+linhas anteriores e colunas adicionais são preservadas. Sem novidades, o CSV
+fica intocado. Consultas que alcançam o limite do RSS são sinalizadas.
+
+O painel distingue última coleta bem-sucedida, última notícia acrescentada e
+quantidade de novidades da tentativa mais recente. A última tentativa, as falhas
+por consulta, a última coleta completa e a data da publicação mais recente ficam
+em `status_coleta.json`. Falha total preserva os dados, atualiza o diagnóstico e
+faz o workflow falhar depois de salvar o status. Sucesso parcial é sinalizado.
+
+A página inicial destaca seis cotações recentes e oferece acesso a **Cotados
+para ministro**, também compartilhável por `?tela=cotados`. Cada destaque traz
+pessoa, pasta quando identificada, natureza do relato, data, veículo, reportagem
+e acesso à ficha. O selo também aparece nas fichas, nas páginas dos órgãos e
+nas reportagens que sustentam a cotação. Os filtros existentes continuam valendo.
+
+O destaque exige contexto ministerial no trecho da própria pessoa. Candidaturas
+a segundo escalão, ministros de tribunais, simples menções e negativas ficam
+fora. Um relato posterior de negativa ou nomeação para a mesma pessoa e pasta
+retira a cotação; uma negativa de outra pasta não apaga a candidatura anterior.
+Trata-se de triagem por manchetes, não de confirmação oficial ou estimativa de
+probabilidade. Datas e links permitem avaliar a atualidade de cada relato.
+
+Validação desta atualização: 27 testes, incluindo navegação da nova tela,
+negações posteriores, escopo de pessoa/cargo, falha total/parcial de coleta,
+deduplicação e preservação de mais de 5.000 registros e colunas editoriais.

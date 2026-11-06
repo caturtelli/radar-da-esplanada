@@ -31,6 +31,7 @@ ALIASES = {
     "Ministério da Ciência, Tecnologia e Inovação": [r"\bciencia,? tecnologia\b"],
     "Ministério dos Direitos Humanos e Cidadania": [r"\bdireitos humanos\b"],
     "Casa Civil": [r"\bcasa civil\b"],
+    "Secretaria de Comunicação Social": [r"\bsecom\b"],
 }
 # Evitar falsas associações: menções a políticas públicas sem relação com cargos.
 APPOINTMENT = re.compile(
@@ -81,3 +82,4 @@ def associate(title, catalog_names):
         if matched:
             found.append(org)
     return found
+
