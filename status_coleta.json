@@ -1,12 +1,12 @@
 {
-  "ultima_tentativa_utc": "2026-11-07T06:30:26+00:00",
-  "concluida_em_utc": "2026-11-07T06:30:33+00:00",
-  "ultima_coleta_sucesso_utc": "2026-11-07T06:30:33+00:00",
-  "ultima_coleta_completa_utc": "2026-11-07T06:30:33+00:00",
-  "ultima_noticia_encontrada_utc": "2026-11-07T06:30:33+00:00",
-  "ultima_publicacao_utc": "2026-11-07T05:11:02+00:00",
-  "novas_noticias": 9,
-  "total_armazenado": 3402,
+  "ultima_tentativa_utc": "2026-11-07T07:43:36+00:00",
+  "concluida_em_utc": "2026-11-07T07:43:42+00:00",
+  "ultima_coleta_sucesso_utc": "2026-11-07T07:43:42+00:00",
+  "ultima_coleta_completa_utc": "2026-11-07T07:43:42+00:00",
+  "ultima_noticia_encontrada_utc": "2026-11-07T07:43:42+00:00",
+  "ultima_publicacao_utc": "2026-11-07T07:00:00+00:00",
+  "novas_noticias": 13,
+  "total_armazenado": 3415,
   "orgaos_consultados": 79,
   "consultas": 89,
   "consultas_com_sucesso": 89,
@@ -30,7 +30,7 @@
     {
       "orgao": "Ministério da Ciência, Tecnologia e Inovação",
       "consulta": "\"Lula\" (\"Ministério da Ciência, Tecnologia e Inovação\" OR \"Ciência, Tecnologia e Inovação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 18,
       "saturada": false,
       "falha": ""
     },
@@ -107,14 +107,14 @@
     {
       "orgao": "Ministério da Fazenda",
       "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 80,
+      "encontradas": 77,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério da Gestão e da Inovação em Serviços Públicos",
       "consulta": "\"Lula\" (\"Ministério da Gestão e da Inovação em Serviços Públicos\" OR \"Gestão e da Inovação em Serviços Públicos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 17,
+      "encontradas": 16,
       "saturada": false,
       "falha": ""
     },
@@ -170,7 +170,7 @@
     {
       "orgao": "Ministério do Planejamento e Orçamento",
       "consulta": "\"Lula\" (\"Ministério do Planejamento e Orçamento\" OR \"Planejamento e Orçamento\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 17,
+      "encontradas": 18,
       "saturada": false,
       "falha": ""
     },
@@ -198,7 +198,7 @@
     {
       "orgao": "Ministério das Relações Exteriores",
       "consulta": "\"Lula\" (\"Ministério das Relações Exteriores\" OR \"Relações Exteriores\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 16,
+      "encontradas": 17,
       "saturada": false,
       "falha": ""
     },
@@ -212,7 +212,7 @@
     {
       "orgao": "Ministério do Trabalho e Emprego",
       "consulta": "\"Lula\" (\"Ministério do Trabalho e Emprego\" OR \"Trabalho e Emprego\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 20,
+      "encontradas": 21,
       "saturada": false,
       "falha": ""
     },
@@ -233,14 +233,14 @@
     {
       "orgao": "Presidência da República",
       "consulta": "\"Lula\" (\"Presidência da República\" OR \"Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 27,
+      "encontradas": 28,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Casa Civil",
       "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 31,
+      "encontradas": 30,
       "saturada": false,
       "falha": ""
     },
@@ -345,14 +345,14 @@
     {
       "orgao": "ANEEL",
       "consulta": "\"Lula\" (\"ANEEL\" OR \"ANEEL\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 9,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "ANP",
       "consulta": "\"Lula\" (\"ANP\" OR \"ANP\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 13,
+      "encontradas": 14,
       "saturada": false,
       "falha": ""
     },
@@ -373,7 +373,7 @@
     {
       "orgao": "Correios",
       "consulta": "\"Lula\" (\"Correios\" OR \"Correios\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 23,
+      "encontradas": 24,
       "saturada": false,
       "falha": ""
     },
@@ -415,7 +415,7 @@
     {
       "orgao": "Fiocruz",
       "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 24,
+      "encontradas": 23,
       "saturada": false,
       "falha": ""
     },
@@ -471,7 +471,7 @@
     {
       "orgao": "DNIT",
       "consulta": "\"Lula\" (\"DNIT\" OR \"DNIT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 10,
+      "encontradas": 9,
       "saturada": false,
       "falha": ""
     },
@@ -555,7 +555,7 @@
     {
       "orgao": "Agência Brasileira de Inteligência",
       "consulta": "\"Lula\" (\"Agência Brasileira de Inteligência\" OR \"Agência Brasileira de Inteligência\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 1,
+      "encontradas": 2,
       "saturada": false,
       "falha": ""
     },
@@ -576,14 +576,14 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministro\" \"indicação\"",
-      "encontradas": 23,
+      "encontradas": 24,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"secretário-executivo\"",
-      "encontradas": 22,
+      "encontradas": 21,
       "saturada": false,
       "falha": ""
     },
@@ -625,7 +625,7 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"cotados\"",
-      "encontradas": 42,
+      "encontradas": 43,
       "saturada": false,
       "falha": ""
     },
