@@ -1,12 +1,12 @@
 {
-  "ultima_tentativa_utc": "2026-11-11T05:41:17+00:00",
-  "concluida_em_utc": "2026-11-11T05:41:24+00:00",
-  "ultima_coleta_sucesso_utc": "2026-11-11T05:41:24+00:00",
-  "ultima_coleta_completa_utc": "2026-11-11T05:41:24+00:00",
-  "ultima_noticia_encontrada_utc": "2026-11-11T05:41:24+00:00",
+  "ultima_tentativa_utc": "2026-11-11T06:44:28+00:00",
+  "concluida_em_utc": "2026-11-11T06:44:36+00:00",
+  "ultima_coleta_sucesso_utc": "2026-11-11T06:44:36+00:00",
+  "ultima_coleta_completa_utc": "2026-11-11T06:44:36+00:00",
+  "ultima_noticia_encontrada_utc": "2026-11-11T06:44:36+00:00",
   "ultima_publicacao_utc": "2026-11-11T05:27:43+00:00",
-  "novas_noticias": 3,
-  "total_armazenado": 5186,
+  "novas_noticias": 4,
+  "total_armazenado": 5190,
   "orgaos_consultados": 79,
   "consultas": 89,
   "consultas_com_sucesso": 89,
@@ -44,7 +44,7 @@
     {
       "orgao": "Ministério da Cultura",
       "consulta": "\"Lula\" (\"Ministério da Cultura\" OR \"Cultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 31,
+      "encontradas": 32,
       "saturada": false,
       "falha": ""
     },
@@ -58,14 +58,14 @@
     {
       "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento Agrário e Agricultura Familiar\" OR \"Desenvolvimento Agrário e Agricultura Familiar\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 15,
+      "encontradas": 14,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome\" OR \"Desenvolvimento e Assistência Social, Família e Combate à Fome\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 12,
+      "encontradas": 11,
       "saturada": false,
       "falha": ""
     },
@@ -100,14 +100,14 @@
     {
       "orgao": "Ministério do Esporte",
       "consulta": "\"Lula\" (\"Ministério do Esporte\" OR \"Esporte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 31,
+      "encontradas": 32,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério da Fazenda",
       "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 52,
+      "encontradas": 53,
       "saturada": false,
       "falha": ""
     },
@@ -177,28 +177,28 @@
     {
       "orgao": "Ministério de Portos e Aeroportos",
       "consulta": "\"Lula\" (\"Ministério de Portos e Aeroportos\" OR \"Portos e Aeroportos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 13,
+      "encontradas": 12,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério da Previdência Social",
       "consulta": "\"Lula\" (\"Ministério da Previdência Social\" OR \"Previdência Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 18,
+      "encontradas": 17,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério dos Povos Indígenas",
       "consulta": "\"Lula\" (\"Ministério dos Povos Indígenas\" OR \"Povos Indígenas\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 25,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério das Relações Exteriores",
       "consulta": "\"Lula\" (\"Ministério das Relações Exteriores\" OR \"Relações Exteriores\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 24,
+      "encontradas": 23,
       "saturada": false,
       "falha": ""
     },
@@ -240,7 +240,7 @@
     {
       "orgao": "Casa Civil",
       "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 27,
+      "encontradas": 26,
       "saturada": false,
       "falha": ""
     },
@@ -261,7 +261,7 @@
     {
       "orgao": "Secretaria de Comunicação Social",
       "consulta": "\"Lula\" (\"Secretaria de Comunicação Social\" OR \"Secretaria de Comunicação Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 14,
+      "encontradas": 13,
       "saturada": false,
       "falha": ""
     },
@@ -352,7 +352,7 @@
     {
       "orgao": "ANP",
       "consulta": "\"Lula\" (\"ANP\" OR \"ANP\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 14,
+      "encontradas": 15,
       "saturada": false,
       "falha": ""
     },
@@ -366,7 +366,7 @@
     {
       "orgao": "Anatel",
       "consulta": "\"Lula\" (\"Anatel\" OR \"Anatel\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 18,
       "saturada": false,
       "falha": ""
     },
@@ -401,7 +401,7 @@
     {
       "orgao": "Anvisa",
       "consulta": "\"Lula\" (\"Anvisa\" OR \"Anvisa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 29,
+      "encontradas": 27,
       "saturada": false,
       "falha": ""
     },
@@ -415,7 +415,7 @@
     {
       "orgao": "Fiocruz",
       "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 13,
+      "encontradas": 14,
       "saturada": false,
       "falha": ""
     },
@@ -443,7 +443,7 @@
     {
       "orgao": "Ancine",
       "consulta": "\"Lula\" (\"Ancine\" OR \"Ancine\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 9,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
@@ -499,7 +499,7 @@
     {
       "orgao": "Ibama",
       "consulta": "\"Lula\" (\"Ibama\" OR \"Ibama\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 20,
       "saturada": false,
       "falha": ""
     },
@@ -527,7 +527,7 @@
     {
       "orgao": "Embrapa",
       "consulta": "\"Lula\" (\"Embrapa\" OR \"Embrapa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 4,
+      "encontradas": 3,
       "saturada": false,
       "falha": ""
     },
@@ -618,7 +618,7 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"reforma ministerial\"",
-      "encontradas": 21,
+      "encontradas": 22,
       "saturada": false,
       "falha": ""
     },
@@ -632,7 +632,7 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"equipe ministerial\"",
-      "encontradas": 15,
+      "encontradas": 13,
       "saturada": false,
       "falha": ""
     }
