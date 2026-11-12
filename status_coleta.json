@@ -1,730 +1,640 @@
 {
-  "ultima_tentativa_utc": "2026-11-12T15:10:50+00:00",
-  "concluida_em_utc": "2026-11-12T15:13:38+00:00",
-  "ultima_coleta_sucesso_utc": "2026-11-12T13:58:00+00:00",
-  "ultima_coleta_completa_utc": "2026-11-12T13:58:00+00:00",
-  "ultima_noticia_encontrada_utc": "2026-11-12T13:58:00+00:00",
-  "ultima_publicacao_utc": "2026-11-12T13:56:09+00:00",
-  "novas_noticias": 0,
-  "total_armazenado": 5870,
+  "ultima_tentativa_utc": "2026-11-12T16:18:16+00:00",
+  "concluida_em_utc": "2026-11-12T16:18:23+00:00",
+  "ultima_coleta_sucesso_utc": "2026-11-12T16:18:23+00:00",
+  "ultima_coleta_completa_utc": "2026-11-12T16:18:23+00:00",
+  "ultima_noticia_encontrada_utc": "2026-11-12T16:18:23+00:00",
+  "ultima_publicacao_utc": "2026-11-12T16:11:38+00:00",
+  "novas_noticias": 72,
+  "total_armazenado": 5942,
   "orgaos_consultados": 79,
   "consultas": 89,
-  "consultas_com_sucesso": 0,
-  "falhas": [
-    "Ministério da Agricultura e Pecuária: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Agricultura+e+Pecu%C3%A1ria%22+OR+%22Agr",
-    "Ministério das Cidades: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Cidades%22+OR+%22Cidades%22%29+%28minis",
-    "Ministério da Ciência, Tecnologia e Inovação: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Ci%C3%AAncia%2C+Tecnologia+e+Inova%C3%A7",
-    "Ministério das Comunicações: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Comunica%C3%A7%C3%B5es%22+OR+%22Comunic",
-    "Ministério da Cultura: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Cultura%22+OR+%22Cultura%22%29+%28minist",
-    "Ministério da Defesa: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Defesa%22+OR+%22Defesa%22%29+%28ministro",
-    "Ministério do Desenvolvimento Agrário e Agricultura Familiar: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento+Agr%C3%A1rio+e+Agricultu",
-    "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento+e+Assist%C3%AAncia+Socia",
-    "Ministério do Desenvolvimento, Indústria, Comércio e Serviços: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento%2C+Ind%C3%BAstria%2C+Com",
-    "Ministério dos Direitos Humanos e Cidadania: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Direitos+Humanos+e+Cidadania%22+OR+%22D",
-    "Ministério da Educação: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Educa%C3%A7%C3%A3o%22+OR+%22Educa%C3%A7%",
-    "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Empreendedorismo%2C+da+Microempresa+e+da",
-    "Ministério do Esporte: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Esporte%22+OR+%22Esporte%22%29+%28minist",
-    "Ministério da Fazenda: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Fazenda%22+OR+%22Fazenda%22%29+%28minist",
-    "Ministério da Gestão e da Inovação em Serviços Públicos: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Gest%C3%A3o+e+da+Inova%C3%A7%C3%A3o+em+S",
-    "Ministério da Igualdade Racial: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Igualdade+Racial%22+OR+%22Igualdade+Raci",
-    "Ministério da Integração e Desenvolvimento Regional: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Integra%C3%A7%C3%A3o+e+Desenvolvimento+R",
-    "Ministério da Justiça e Segurança Pública: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Justi%C3%A7a+e+Seguran%C3%A7a+P%C3%BAbli",
-    "Ministério do Meio Ambiente e Mudança do Clima: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Meio+Ambiente+e+Mudan%C3%A7a+do+Clima%22",
-    "Ministério de Minas e Energia: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Minas+e+Energia%22+OR+%22Minas+e+Energia",
-    "Ministério das Mulheres: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Mulheres%22+OR+%22Mulheres%22%29+%28min",
-    "Ministério da Pesca e Aquicultura: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Pesca+e+Aquicultura%22+OR+%22Pesca+e+Aqu",
-    "Ministério do Planejamento e Orçamento: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Planejamento+e+Or%C3%A7amento%22+OR+%22P",
-    "Ministério de Portos e Aeroportos: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Ae",
-    "Ministério da Previdência Social: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Previd%C3%AAncia+Social%22+OR+%22Previd%",
-    "Ministério dos Povos Indígenas: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Povos+Ind%C3%ADgenas%22+OR+%22Povos+Ind",
-    "Ministério das Relações Exteriores: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Rela%C3%A7%C3%B5es+Exteriores%22+OR+%22",
-    "Ministério da Saúde: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Sa%C3%BAde%22+OR+%22Sa%C3%BAde%22%29+%28",
-    "Ministério do Trabalho e Emprego: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Trabalho+e+Emprego%22+OR+%22Trabalho+e+E",
-    "Ministério dos Transportes: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Transportes%22+OR+%22Transportes%22%29+",
-    "Ministério do Turismo: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Turismo%22+OR+%22Turismo%22%29+%28minist",
-    "Presidência da República: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Presid%C3%AAncia+da+Rep%C3%BAblica%22+OR+%22Presid%C3%AAnci",
-    "Casa Civil: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+Civil%22+OR+%22Casa+Civil%22%29+%28ministro+OR+cotado+",
-    "Secretaria-Geral da Presidência da República: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria-Geral+da+Presid%C3%AAncia+da+Rep%C3%BAblica%22+O",
-    "Secretaria de Relações Institucionais: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Rela%C3%A7%C3%B5es+Institucionais%22+OR+%22Se",
-    "Secretaria de Comunicação Social: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Comunica%C3%A7%C3%A3o+Social%22+OR+%22Secreta",
-    "Gabinete de Segurança Institucional: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Gabinete+de+Seguran%C3%A7a+Institucional%22+OR+%22Gabinete+",
-    "Advocacia-Geral da União: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Advocacia-Geral+da+Uni%C3%A3o%22+OR+%22Advocacia-Geral+da+U",
-    "Controladoria-Geral da União: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Controladoria-Geral+da+Uni%C3%A3o%22+OR+%22Controladoria-Ge",
-    "Banco do Brasil: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Banco+do+Brasil%22+OR+%22Banco+do+Brasil%22%29+%28ministro+",
-    "Caixa Econômica Federal: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Caixa+Econ%C3%B4mica+Federal%22+OR+%22Caixa+Econ%C3%B4mica+",
-    "Banco Central do Brasil: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Banco+Central+do+Brasil%22+OR+%22Banco+Central+do+Brasil%22",
-    "Casa da Moeda do Brasil: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+da+Moeda+do+Brasil%22+OR+%22Casa+da+Moeda+do+Brasil%22",
-    "BNDES: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22BNDES%22+OR+%22BNDES%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "INMETRO: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22INMETRO%22+OR+%22INMETRO%22%29+%28ministro+OR+cotado+OR+nom",
-    "Petrobras: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Petrobras%22+OR+%22Petrobras%22%29+%28ministro+OR+cotado+OR",
-    "Eletronuclear: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Eletronuclear%22+OR+%22Eletronuclear%22%29+%28ministro+OR+c",
-    "ANEEL: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANEEL%22+OR+%22ANEEL%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "ANP: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANP%22+OR+%22ANP%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "ANM: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANM%22+OR+%22ANM%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "Anatel: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anatel%22+OR+%22Anatel%22%29+%28ministro+OR+cotado+OR+nomea",
-    "Correios: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Correios%22+OR+%22Correios%22%29+%28ministro+OR+cotado+OR+n",
-    "Polícia Federal: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Pol%C3%ADcia+Federal%22+OR+%22Pol%C3%ADcia+Federal%22%29+%2",
-    "Polícia Rodoviária Federal: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Pol%C3%ADcia+Rodovi%C3%A1ria+Federal%22+OR+%22Pol%C3%ADcia+",
-    "Senappen: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Senappen%22+OR+%22Senappen%22%29+%28ministro+OR+cotado+OR+n",
-    "Anvisa: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anvisa%22+OR+%22Anvisa%22%29+%28ministro+OR+cotado+OR+nomea",
-    "ANS: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANS%22+OR+%22ANS%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "Fiocruz: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Fiocruz%22+OR+%22Fiocruz%22%29+%28ministro+OR+cotado+OR+nom",
-    "FNDE: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22FNDE%22+OR+%22FNDE%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Inep: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Inep%22+OR+%22Inep%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Capes: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Capes%22+OR+%22Capes%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "Ancine: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ancine%22+OR+%22Ancine%22%29+%28ministro+OR+cotado+OR+nomea",
-    "Iphan: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Iphan%22+OR+%22Iphan%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "Funarte: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Funarte%22+OR+%22Funarte%22%29+%28ministro+OR+cotado+OR+nom",
-    "ANTT: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANTT%22+OR+%22ANTT%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "DNIT: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22DNIT%22+OR+%22DNIT%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Anac: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anac%22+OR+%22Anac%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Antaq: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Antaq%22+OR+%22Antaq%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "Infraero: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Infraero%22+OR+%22Infraero%22%29+%28ministro+OR+cotado+OR+n",
-    "Ibama: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ibama%22+OR+%22Ibama%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "ICMBio: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ICMBio%22+OR+%22ICMBio%22%29+%28ministro+OR+cotado+OR+nomea",
-    "IBGE: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22IBGE%22+OR+%22IBGE%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Ipea: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ipea%22+OR+%22Ipea%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
-    "Embrapa: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Embrapa%22+OR+%22Embrapa%22%29+%28ministro+OR+cotado+OR+nom",
-    "Funai: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Funai%22+OR+%22Funai%22%29+%28ministro+OR+cotado+OR+nomea%C",
-    "Serpro: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Serpro%22+OR+%22Serpro%22%29+%28ministro+OR+cotado+OR+nomea",
-    "Dataprev: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Dataprev%22+OR+%22Dataprev%22%29+%28ministro+OR+cotado+OR+n",
-    "Agência Brasileira de Inteligência: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ag%C3%AAncia+Brasileira+de+Intelig%C3%AAncia%22+OR+%22Ag%C3",
-    "Empresa Brasil de Comunicação: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Empresa+Brasil+de+Comunica%C3%A7%C3%A3o%22+OR+%22Empresa+Br",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22minist%C3%A9rio%22+%22nome%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22secret%C3%A1rio-executivo%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22governo+Lula%22+%22nomea%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22composi%C3%A7%C3%A3o+do+governo%22+when%3A7d&hl=pt-BR&gl=BR&ce",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22estatais%22+%22presid%C3%AAncia%22+when%3A7d&hl=pt-BR&gl=BR&ce",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22novo+governo%22+ministros+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22reforma+ministerial%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22cotados%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419",
-    "Governo — busca geral: HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22equipe+ministerial%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419"
-  ],
+  "consultas_com_sucesso": 89,
+  "falhas": [],
   "consultas_saturadas": 0,
   "detalhes_consultas": [
     {
       "orgao": "Ministério da Agricultura e Pecuária",
       "consulta": "\"Lula\" (\"Ministério da Agricultura e Pecuária\" OR \"Agricultura e Pecuária\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 18,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Agricultura+e+Pecu%C3%A1ria%22+OR+%22Agr"
+      "falha": ""
     },
     {
       "orgao": "Ministério das Cidades",
       "consulta": "\"Lula\" (\"Ministério das Cidades\" OR \"Cidades\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 31,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Cidades%22+OR+%22Cidades%22%29+%28minis"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Ciência, Tecnologia e Inovação",
       "consulta": "\"Lula\" (\"Ministério da Ciência, Tecnologia e Inovação\" OR \"Ciência, Tecnologia e Inovação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 10,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Ci%C3%AAncia%2C+Tecnologia+e+Inova%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "Ministério das Comunicações",
       "consulta": "\"Lula\" (\"Ministério das Comunicações\" OR \"Comunicações\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 22,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Comunica%C3%A7%C3%B5es%22+OR+%22Comunic"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Cultura",
       "consulta": "\"Lula\" (\"Ministério da Cultura\" OR \"Cultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Cultura%22+OR+%22Cultura%22%29+%28minist"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Defesa",
       "consulta": "\"Lula\" (\"Ministério da Defesa\" OR \"Defesa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Defesa%22+OR+%22Defesa%22%29+%28ministro"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento Agrário e Agricultura Familiar\" OR \"Desenvolvimento Agrário e Agricultura Familiar\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 13,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento+Agr%C3%A1rio+e+Agricultu"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome\" OR \"Desenvolvimento e Assistência Social, Família e Combate à Fome\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 11,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento+e+Assist%C3%AAncia+Socia"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento, Indústria, Comércio e Serviços\" OR \"Desenvolvimento, Indústria, Comércio e Serviços\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 30,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento%2C+Ind%C3%BAstria%2C+Com"
+      "falha": ""
     },
     {
       "orgao": "Ministério dos Direitos Humanos e Cidadania",
       "consulta": "\"Lula\" (\"Ministério dos Direitos Humanos e Cidadania\" OR \"Direitos Humanos e Cidadania\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 2,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Direitos+Humanos+e+Cidadania%22+OR+%22D"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Educação",
       "consulta": "\"Lula\" (\"Ministério da Educação\" OR \"Educação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 30,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Educa%C3%A7%C3%A3o%22+OR+%22Educa%C3%A7%"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",
       "consulta": "\"Lula\" (\"Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\" OR \"Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 10,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Empreendedorismo%2C+da+Microempresa+e+da"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Esporte",
       "consulta": "\"Lula\" (\"Ministério do Esporte\" OR \"Esporte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 28,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Esporte%22+OR+%22Esporte%22%29+%28minist"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Fazenda",
       "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 33,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Fazenda%22+OR+%22Fazenda%22%29+%28minist"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Gestão e da Inovação em Serviços Públicos",
       "consulta": "\"Lula\" (\"Ministério da Gestão e da Inovação em Serviços Públicos\" OR \"Gestão e da Inovação em Serviços Públicos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Gest%C3%A3o+e+da+Inova%C3%A7%C3%A3o+em+S"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Igualdade Racial",
       "consulta": "\"Lula\" (\"Ministério da Igualdade Racial\" OR \"Igualdade Racial\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 10,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Igualdade+Racial%22+OR+%22Igualdade+Raci"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Integração e Desenvolvimento Regional",
       "consulta": "\"Lula\" (\"Ministério da Integração e Desenvolvimento Regional\" OR \"Integração e Desenvolvimento Regional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 2,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Integra%C3%A7%C3%A3o+e+Desenvolvimento+R"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Justiça e Segurança Pública",
       "consulta": "\"Lula\" (\"Ministério da Justiça e Segurança Pública\" OR \"Justiça e Segurança Pública\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 22,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Justi%C3%A7a+e+Seguran%C3%A7a+P%C3%BAbli"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
       "consulta": "\"Lula\" (\"Ministério do Meio Ambiente e Mudança do Clima\" OR \"Meio Ambiente e Mudança do Clima\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 14,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Meio+Ambiente+e+Mudan%C3%A7a+do+Clima%22"
+      "falha": ""
     },
     {
       "orgao": "Ministério de Minas e Energia",
       "consulta": "\"Lula\" (\"Ministério de Minas e Energia\" OR \"Minas e Energia\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 27,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Minas+e+Energia%22+OR+%22Minas+e+Energia"
+      "falha": ""
     },
     {
       "orgao": "Ministério das Mulheres",
       "consulta": "\"Lula\" (\"Ministério das Mulheres\" OR \"Mulheres\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Mulheres%22+OR+%22Mulheres%22%29+%28min"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Pesca e Aquicultura",
       "consulta": "\"Lula\" (\"Ministério da Pesca e Aquicultura\" OR \"Pesca e Aquicultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 8,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Pesca+e+Aquicultura%22+OR+%22Pesca+e+Aqu"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Planejamento e Orçamento",
       "consulta": "\"Lula\" (\"Ministério do Planejamento e Orçamento\" OR \"Planejamento e Orçamento\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Planejamento+e+Or%C3%A7amento%22+OR+%22P"
+      "falha": ""
     },
     {
       "orgao": "Ministério de Portos e Aeroportos",
       "consulta": "\"Lula\" (\"Ministério de Portos e Aeroportos\" OR \"Portos e Aeroportos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 14,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Ae"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Previdência Social",
       "consulta": "\"Lula\" (\"Ministério da Previdência Social\" OR \"Previdência Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 19,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Previd%C3%AAncia+Social%22+OR+%22Previd%"
+      "falha": ""
     },
     {
       "orgao": "Ministério dos Povos Indígenas",
       "consulta": "\"Lula\" (\"Ministério dos Povos Indígenas\" OR \"Povos Indígenas\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Povos+Ind%C3%ADgenas%22+OR+%22Povos+Ind"
+      "falha": ""
     },
     {
       "orgao": "Ministério das Relações Exteriores",
       "consulta": "\"Lula\" (\"Ministério das Relações Exteriores\" OR \"Relações Exteriores\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 22,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Rela%C3%A7%C3%B5es+Exteriores%22+OR+%22"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Saúde",
       "consulta": "\"Lula\" (\"Ministério da Saúde\" OR \"Saúde\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 32,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Sa%C3%BAde%22+OR+%22Sa%C3%BAde%22%29+%28"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Trabalho e Emprego",
       "consulta": "\"Lula\" (\"Ministério do Trabalho e Emprego\" OR \"Trabalho e Emprego\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 27,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Trabalho+e+Emprego%22+OR+%22Trabalho+e+E"
+      "falha": ""
     },
     {
       "orgao": "Ministério dos Transportes",
       "consulta": "\"Lula\" (\"Ministério dos Transportes\" OR \"Transportes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Transportes%22+OR+%22Transportes%22%29+"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Turismo",
       "consulta": "\"Lula\" (\"Ministério do Turismo\" OR \"Turismo\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 32,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Turismo%22+OR+%22Turismo%22%29+%28minist"
+      "falha": ""
     },
     {
       "orgao": "Presidência da República",
       "consulta": "\"Lula\" (\"Presidência da República\" OR \"Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Presid%C3%AAncia+da+Rep%C3%BAblica%22+OR+%22Presid%C3%AAnci"
+      "falha": ""
     },
     {
       "orgao": "Casa Civil",
       "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 27,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+Civil%22+OR+%22Casa+Civil%22%29+%28ministro+OR+cotado+"
+      "falha": ""
     },
     {
       "orgao": "Secretaria-Geral da Presidência da República",
       "consulta": "\"Lula\" (\"Secretaria-Geral da Presidência da República\" OR \"Secretaria-Geral da Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 5,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria-Geral+da+Presid%C3%AAncia+da+Rep%C3%BAblica%22+O"
+      "falha": ""
     },
     {
       "orgao": "Secretaria de Relações Institucionais",
       "consulta": "\"Lula\" (\"Secretaria de Relações Institucionais\" OR \"Secretaria de Relações Institucionais\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Rela%C3%A7%C3%B5es+Institucionais%22+OR+%22Se"
+      "falha": ""
     },
     {
       "orgao": "Secretaria de Comunicação Social",
       "consulta": "\"Lula\" (\"Secretaria de Comunicação Social\" OR \"Secretaria de Comunicação Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 12,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Comunica%C3%A7%C3%A3o+Social%22+OR+%22Secreta"
+      "falha": ""
     },
     {
       "orgao": "Gabinete de Segurança Institucional",
       "consulta": "\"Lula\" (\"Gabinete de Segurança Institucional\" OR \"Gabinete de Segurança Institucional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Gabinete+de+Seguran%C3%A7a+Institucional%22+OR+%22Gabinete+"
+      "falha": ""
     },
     {
       "orgao": "Advocacia-Geral da União",
       "consulta": "\"Lula\" (\"Advocacia-Geral da União\" OR \"Advocacia-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Advocacia-Geral+da+Uni%C3%A3o%22+OR+%22Advocacia-Geral+da+U"
+      "falha": ""
     },
     {
       "orgao": "Controladoria-Geral da União",
       "consulta": "\"Lula\" (\"Controladoria-Geral da União\" OR \"Controladoria-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 12,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Controladoria-Geral+da+Uni%C3%A3o%22+OR+%22Controladoria-Ge"
+      "falha": ""
     },
     {
       "orgao": "Banco do Brasil",
       "consulta": "\"Lula\" (\"Banco do Brasil\" OR \"Banco do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 26,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Banco+do+Brasil%22+OR+%22Banco+do+Brasil%22%29+%28ministro+"
+      "falha": ""
     },
     {
       "orgao": "Caixa Econômica Federal",
       "consulta": "\"Lula\" (\"Caixa Econômica Federal\" OR \"Caixa Econômica Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Caixa+Econ%C3%B4mica+Federal%22+OR+%22Caixa+Econ%C3%B4mica+"
+      "falha": ""
     },
     {
       "orgao": "Banco Central do Brasil",
       "consulta": "\"Lula\" (\"Banco Central do Brasil\" OR \"Banco Central do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 8,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Banco+Central+do+Brasil%22+OR+%22Banco+Central+do+Brasil%22"
+      "falha": ""
     },
     {
       "orgao": "Casa da Moeda do Brasil",
       "consulta": "\"Lula\" (\"Casa da Moeda do Brasil\" OR \"Casa da Moeda do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
       "encontradas": 0,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+da+Moeda+do+Brasil%22+OR+%22Casa+da+Moeda+do+Brasil%22"
+      "falha": ""
     },
     {
       "orgao": "BNDES",
       "consulta": "\"Lula\" (\"BNDES\" OR \"BNDES\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22BNDES%22+OR+%22BNDES%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "INMETRO",
       "consulta": "\"Lula\" (\"INMETRO\" OR \"INMETRO\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22INMETRO%22+OR+%22INMETRO%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "Petrobras",
       "consulta": "\"Lula\" (\"Petrobras\" OR \"Petrobras\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 29,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Petrobras%22+OR+%22Petrobras%22%29+%28ministro+OR+cotado+OR"
+      "falha": ""
     },
     {
       "orgao": "Eletronuclear",
       "consulta": "\"Lula\" (\"Eletronuclear\" OR \"Eletronuclear\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 6,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Eletronuclear%22+OR+%22Eletronuclear%22%29+%28ministro+OR+c"
+      "falha": ""
     },
     {
       "orgao": "ANEEL",
       "consulta": "\"Lula\" (\"ANEEL\" OR \"ANEEL\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 12,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANEEL%22+OR+%22ANEEL%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "ANP",
       "consulta": "\"Lula\" (\"ANP\" OR \"ANP\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 13,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANP%22+OR+%22ANP%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "ANM",
       "consulta": "\"Lula\" (\"ANM\" OR \"ANM\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANM%22+OR+%22ANM%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "Anatel",
       "consulta": "\"Lula\" (\"Anatel\" OR \"Anatel\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 11,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anatel%22+OR+%22Anatel%22%29+%28ministro+OR+cotado+OR+nomea"
+      "falha": ""
     },
     {
       "orgao": "Correios",
       "consulta": "\"Lula\" (\"Correios\" OR \"Correios\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 23,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Correios%22+OR+%22Correios%22%29+%28ministro+OR+cotado+OR+n"
+      "falha": ""
     },
     {
       "orgao": "Polícia Federal",
       "consulta": "\"Lula\" (\"Polícia Federal\" OR \"Polícia Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 32,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Pol%C3%ADcia+Federal%22+OR+%22Pol%C3%ADcia+Federal%22%29+%2"
+      "falha": ""
     },
     {
       "orgao": "Polícia Rodoviária Federal",
       "consulta": "\"Lula\" (\"Polícia Rodoviária Federal\" OR \"Polícia Rodoviária Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 22,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Pol%C3%ADcia+Rodovi%C3%A1ria+Federal%22+OR+%22Pol%C3%ADcia+"
+      "falha": ""
     },
     {
       "orgao": "Senappen",
       "consulta": "\"Lula\" (\"Senappen\" OR \"Senappen\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 5,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Senappen%22+OR+%22Senappen%22%29+%28ministro+OR+cotado+OR+n"
+      "falha": ""
     },
     {
       "orgao": "Anvisa",
       "consulta": "\"Lula\" (\"Anvisa\" OR \"Anvisa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anvisa%22+OR+%22Anvisa%22%29+%28ministro+OR+cotado+OR+nomea"
+      "falha": ""
     },
     {
       "orgao": "ANS",
       "consulta": "\"Lula\" (\"ANS\" OR \"ANS\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
       "encontradas": 0,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANS%22+OR+%22ANS%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "Fiocruz",
       "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Fiocruz%22+OR+%22Fiocruz%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "FNDE",
       "consulta": "\"Lula\" (\"FNDE\" OR \"FNDE\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 6,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22FNDE%22+OR+%22FNDE%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Inep",
       "consulta": "\"Lula\" (\"Inep\" OR \"Inep\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 27,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Inep%22+OR+%22Inep%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Capes",
       "consulta": "\"Lula\" (\"Capes\" OR \"Capes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 6,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Capes%22+OR+%22Capes%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "Ancine",
       "consulta": "\"Lula\" (\"Ancine\" OR \"Ancine\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 10,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ancine%22+OR+%22Ancine%22%29+%28ministro+OR+cotado+OR+nomea"
+      "falha": ""
     },
     {
       "orgao": "Iphan",
       "consulta": "\"Lula\" (\"Iphan\" OR \"Iphan\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Iphan%22+OR+%22Iphan%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "Funarte",
       "consulta": "\"Lula\" (\"Funarte\" OR \"Funarte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
       "encontradas": 0,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Funarte%22+OR+%22Funarte%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "ANTT",
       "consulta": "\"Lula\" (\"ANTT\" OR \"ANTT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 11,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANTT%22+OR+%22ANTT%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "DNIT",
       "consulta": "\"Lula\" (\"DNIT\" OR \"DNIT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 6,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22DNIT%22+OR+%22DNIT%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Anac",
       "consulta": "\"Lula\" (\"Anac\" OR \"Anac\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 5,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anac%22+OR+%22Anac%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Antaq",
       "consulta": "\"Lula\" (\"Antaq\" OR \"Antaq\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 2,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Antaq%22+OR+%22Antaq%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "Infraero",
       "consulta": "\"Lula\" (\"Infraero\" OR \"Infraero\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 1,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Infraero%22+OR+%22Infraero%22%29+%28ministro+OR+cotado+OR+n"
+      "falha": ""
     },
     {
       "orgao": "Ibama",
       "consulta": "\"Lula\" (\"Ibama\" OR \"Ibama\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 19,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ibama%22+OR+%22Ibama%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "ICMBio",
       "consulta": "\"Lula\" (\"ICMBio\" OR \"ICMBio\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 4,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ICMBio%22+OR+%22ICMBio%22%29+%28ministro+OR+cotado+OR+nomea"
+      "falha": ""
     },
     {
       "orgao": "IBGE",
       "consulta": "\"Lula\" (\"IBGE\" OR \"IBGE\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 20,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22IBGE%22+OR+%22IBGE%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Ipea",
       "consulta": "\"Lula\" (\"Ipea\" OR \"Ipea\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 4,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ipea%22+OR+%22Ipea%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Embrapa",
       "consulta": "\"Lula\" (\"Embrapa\" OR \"Embrapa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Embrapa%22+OR+%22Embrapa%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "Funai",
       "consulta": "\"Lula\" (\"Funai\" OR \"Funai\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Funai%22+OR+%22Funai%22%29+%28ministro+OR+cotado+OR+nomea%C"
+      "falha": ""
     },
     {
       "orgao": "Serpro",
       "consulta": "\"Lula\" (\"Serpro\" OR \"Serpro\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 2,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Serpro%22+OR+%22Serpro%22%29+%28ministro+OR+cotado+OR+nomea"
+      "falha": ""
     },
     {
       "orgao": "Dataprev",
       "consulta": "\"Lula\" (\"Dataprev\" OR \"Dataprev\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Dataprev%22+OR+%22Dataprev%22%29+%28ministro+OR+cotado+OR+n"
+      "falha": ""
     },
     {
       "orgao": "Agência Brasileira de Inteligência",
       "consulta": "\"Lula\" (\"Agência Brasileira de Inteligência\" OR \"Agência Brasileira de Inteligência\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 8,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Ag%C3%AAncia+Brasileira+de+Intelig%C3%AAncia%22+OR+%22Ag%C3"
+      "falha": ""
     },
     {
       "orgao": "Empresa Brasil de Comunicação",
       "consulta": "\"Lula\" (\"Empresa Brasil de Comunicação\" OR \"Empresa Brasil de Comunicação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 7,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Empresa+Brasil+de+Comunica%C3%A7%C3%A3o%22+OR+%22Empresa+Br"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministério\" \"nome\"",
-      "encontradas": 0,
+      "encontradas": 20,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22minist%C3%A9rio%22+%22nome%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministro\" \"indicação\"",
-      "encontradas": 0,
+      "encontradas": 26,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"secretário-executivo\"",
-      "encontradas": 0,
+      "encontradas": 24,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22secret%C3%A1rio-executivo%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"governo Lula\" \"nomeação\"",
-      "encontradas": 0,
+      "encontradas": 22,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22governo+Lula%22+%22nomea%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"composição do governo\"",
-      "encontradas": 0,
+      "encontradas": 12,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22composi%C3%A7%C3%A3o+do+governo%22+when%3A7d&hl=pt-BR&gl=BR&ce"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"estatais\" \"presidência\"",
-      "encontradas": 0,
+      "encontradas": 1,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22estatais%22+%22presid%C3%AAncia%22+when%3A7d&hl=pt-BR&gl=BR&ce"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"novo governo\" ministros",
-      "encontradas": 0,
+      "encontradas": 25,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22novo+governo%22+ministros+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"reforma ministerial\"",
-      "encontradas": 0,
+      "encontradas": 14,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22reforma+ministerial%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"cotados\"",
-      "encontradas": 0,
+      "encontradas": 18,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22cotados%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"equipe ministerial\"",
-      "encontradas": 0,
+      "encontradas": 15,
       "saturada": false,
-      "falha": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lula%22+%22equipe+ministerial%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+      "falha": ""
     }
   ],
   "frequencia_prevista_minutos": 30,
