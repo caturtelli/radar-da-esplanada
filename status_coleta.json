@@ -1,50 +1,57 @@
 {
-  "ultima_tentativa_utc": "2026-11-17T03:36:21+00:00",
-  "concluida_em_utc": "2026-11-17T03:36:29+00:00",
-  "ultima_coleta_sucesso_utc": "2026-11-17T03:36:29+00:00",
+  "ultima_tentativa_utc": "2026-11-17T04:41:40+00:00",
+  "concluida_em_utc": "2026-11-17T04:41:48+00:00",
+  "ultima_coleta_sucesso_utc": "2026-11-17T04:41:48+00:00",
   "ultima_coleta_completa_utc": "2026-11-16T19:16:14+00:00",
-  "ultima_noticia_encontrada_utc": "2026-11-17T03:36:29+00:00",
-  "ultima_publicacao_utc": "2026-11-17T03:00:00+00:00",
-  "novas_noticias": 24,
-  "total_armazenado": 7884,
+  "ultima_noticia_encontrada_utc": "2026-11-17T04:41:48+00:00",
+  "ultima_publicacao_utc": "2026-11-17T03:34:19+00:00",
+  "novas_noticias": 8,
+  "total_armazenado": 7892,
   "orgaos_consultados": 79,
   "consultas": 89,
-  "consultas_com_sucesso": 69,
+  "consultas_com_sucesso": 62,
   "falhas": [
-    "Ministério da Agricultura e Pecuária: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Agricultura+e+Pecu%C3%A1ria%22+OR+%22Agric",
-    "Ministério do Desenvolvimento, Indústria, Comércio e Serviços: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento%2C+Ind%C3%BAstria%2C+Com%C",
-    "Ministério da Gestão e da Inovação em Serviços Públicos: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Gest%C3%A3o+e+da+Inova%C3%A7%C3%A3o+em+Ser",
-    "Ministério da Igualdade Racial: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Igualdade+Racial%22+OR+%22Igualdade+Racial",
-    "Ministério do Meio Ambiente e Mudança do Clima: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Meio+Ambiente+e+Mudan%C3%A7a+do+Clima%22+O",
-    "Ministério da Pesca e Aquicultura: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Pesca+e+Aquicultura%22+OR+%22Pesca+e+Aquic",
+    "Ministério das Comunicações: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Comunica%C3%A7%C3%B5es%22+OR+%22Comunica%",
+    "Ministério do Esporte: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Esporte%22+OR+%22Esporte%22%29+%28ministro",
+    "Ministério da Integração e Desenvolvimento Regional: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Integra%C3%A7%C3%A3o+e+Desenvolvimento+Reg",
+    "Ministério das Mulheres: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Mulheres%22+OR+%22Mulheres%22%29+%28minis",
+    "Ministério de Portos e Aeroportos: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Aero",
+    "Ministério da Previdência Social: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Previd%C3%AAncia+Social%22+OR+%22Previd%C3",
+    "Ministério dos Povos Indígenas: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Povos+Ind%C3%ADgenas%22+OR+%22Povos+Ind%C",
     "Ministério das Relações Exteriores: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Rela%C3%A7%C3%B5es+Exteriores%22+OR+%22Re",
     "Ministério da Saúde: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Sa%C3%BAde%22+OR+%22Sa%C3%BAde%22%29+%28mi",
+    "Ministério do Trabalho e Emprego: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Trabalho+e+Emprego%22+OR+%22Trabalho+e+Emp",
+    "Secretaria-Geral da Presidência da República: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria-Geral+da+Presid%C3%AAncia+da+Rep%C3%BAblica%22+OR+",
     "Secretaria de Relações Institucionais: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Rela%C3%A7%C3%B5es+Institucionais%22+OR+%22Secr",
     "Secretaria de Comunicação Social: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria+de+Comunica%C3%A7%C3%A3o+Social%22+OR+%22Secretari",
     "Banco do Brasil: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Banco+do+Brasil%22+OR+%22Banco+do+Brasil%22%29+%28ministro+OR",
-    "ANM: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANM%22+OR+%22ANM%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7%C",
-    "Correios: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Correios%22+OR+%22Correios%22%29+%28ministro+OR+cotado+OR+nom",
+    "Casa da Moeda do Brasil: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+da+Moeda+do+Brasil%22+OR+%22Casa+da+Moeda+do+Brasil%22%2",
+    "Petrobras: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Petrobras%22+OR+%22Petrobras%22%29+%28ministro+OR+cotado+OR+n",
+    "ANEEL: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANEEL%22+OR+%22ANEEL%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
     "Polícia Federal: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Pol%C3%ADcia+Federal%22+OR+%22Pol%C3%ADcia+Federal%22%29+%28m",
-    "Inep: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Inep%22+OR+%22Inep%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "Capes: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Capes%22+OR+%22Capes%22%29+%28ministro+OR+cotado+OR+nomea%C3%",
+    "Senappen: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Senappen%22+OR+%22Senappen%22%29+%28ministro+OR+cotado+OR+nom",
+    "Anvisa: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anvisa%22+OR+%22Anvisa%22%29+%28ministro+OR+cotado+OR+nomea%C",
     "ANTT: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANTT%22+OR+%22ANTT%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "Dataprev: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Dataprev%22+OR+%22Dataprev%22%29+%28ministro+OR+cotado+OR+nom",
+    "ICMBio: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ICMBio%22+OR+%22ICMBio%22%29+%28ministro+OR+cotado+OR+nomea%C",
+    "Empresa Brasil de Comunicação: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Empresa+Brasil+de+Comunica%C3%A7%C3%A3o%22+OR+%22Empresa+Bras",
     "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22minist%C3%A9rio%22+%22nome%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:p",
-    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22estatais%22+%22presid%C3%AAncia%22+when%3A7d&hl=pt-BR&gl=BR&ceid"
+    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&c",
+    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22governo+Lula%22+%22nomea%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:p",
+    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22novo+governo%22+ministros+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-41"
   ],
   "consultas_saturadas": 0,
   "detalhes_consultas": [
     {
       "orgao": "Ministério da Agricultura e Pecuária",
       "consulta": "\"Lula\" (\"Ministério da Agricultura e Pecuária\" OR \"Agricultura e Pecuária\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 21,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Agricultura+e+Pecu%C3%A1ria%22+OR+%22Agric"
+      "falha": ""
     },
     {
       "orgao": "Ministério das Cidades",
       "consulta": "\"Lula\" (\"Ministério das Cidades\" OR \"Cidades\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 27,
+      "encontradas": 26,
       "saturada": false,
       "falha": ""
     },
@@ -58,14 +65,14 @@
     {
       "orgao": "Ministério das Comunicações",
       "consulta": "\"Lula\" (\"Ministério das Comunicações\" OR \"Comunicações\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Comunica%C3%A7%C3%B5es%22+OR+%22Comunica%"
     },
     {
       "orgao": "Ministério da Cultura",
       "consulta": "\"Lula\" (\"Ministério da Cultura\" OR \"Cultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 20,
+      "encontradas": 22,
       "saturada": false,
       "falha": ""
     },
@@ -93,9 +100,9 @@
     {
       "orgao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento, Indústria, Comércio e Serviços\" OR \"Desenvolvimento, Indústria, Comércio e Serviços\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 24,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Desenvolvimento%2C+Ind%C3%BAstria%2C+Com%C"
+      "falha": ""
     },
     {
       "orgao": "Ministério dos Direitos Humanos e Cidadania",
@@ -107,7 +114,7 @@
     {
       "orgao": "Ministério da Educação",
       "consulta": "\"Lula\" (\"Ministério da Educação\" OR \"Educação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 30,
+      "encontradas": 29,
       "saturada": false,
       "falha": ""
     },
@@ -121,51 +128,51 @@
     {
       "orgao": "Ministério do Esporte",
       "consulta": "\"Lula\" (\"Ministério do Esporte\" OR \"Esporte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 28,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Esporte%22+OR+%22Esporte%22%29+%28ministro"
     },
     {
       "orgao": "Ministério da Fazenda",
       "consulta": "\"Lula\" (\"Ministério da Fazenda\" OR \"Fazenda\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 33,
+      "encontradas": 32,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério da Gestão e da Inovação em Serviços Públicos",
       "consulta": "\"Lula\" (\"Ministério da Gestão e da Inovação em Serviços Públicos\" OR \"Gestão e da Inovação em Serviços Públicos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
-      "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Gest%C3%A3o+e+da+Inova%C3%A7%C3%A3o+em+Ser"
-    },
-    {
-      "orgao": "Ministério da Igualdade Racial",
-      "consulta": "\"Lula\" (\"Ministério da Igualdade Racial\" OR \"Igualdade Racial\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
-      "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Igualdade+Racial%22+OR+%22Igualdade+Racial"
-    },
-    {
-      "orgao": "Ministério da Integração e Desenvolvimento Regional",
-      "consulta": "\"Lula\" (\"Ministério da Integração e Desenvolvimento Regional\" OR \"Integração e Desenvolvimento Regional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 1,
+      "encontradas": 18,
       "saturada": false,
       "falha": ""
     },
     {
+      "orgao": "Ministério da Igualdade Racial",
+      "consulta": "\"Lula\" (\"Ministério da Igualdade Racial\" OR \"Igualdade Racial\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "encontradas": 12,
+      "saturada": false,
+      "falha": ""
+    },
+    {
+      "orgao": "Ministério da Integração e Desenvolvimento Regional",
+      "consulta": "\"Lula\" (\"Ministério da Integração e Desenvolvimento Regional\" OR \"Integração e Desenvolvimento Regional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
+      "encontradas": 0,
+      "saturada": false,
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Integra%C3%A7%C3%A3o+e+Desenvolvimento+Reg"
+    },
+    {
       "orgao": "Ministério da Justiça e Segurança Pública",
       "consulta": "\"Lula\" (\"Ministério da Justiça e Segurança Pública\" OR \"Justiça e Segurança Pública\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 10,
+      "encontradas": 9,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
       "consulta": "\"Lula\" (\"Ministério do Meio Ambiente e Mudança do Clima\" OR \"Meio Ambiente e Mudança do Clima\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 18,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Meio+Ambiente+e+Mudan%C3%A7a+do+Clima%22+O"
+      "falha": ""
     },
     {
       "orgao": "Ministério de Minas e Energia",
@@ -177,16 +184,16 @@
     {
       "orgao": "Ministério das Mulheres",
       "consulta": "\"Lula\" (\"Ministério das Mulheres\" OR \"Mulheres\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+das+Mulheres%22+OR+%22Mulheres%22%29+%28minis"
     },
     {
       "orgao": "Ministério da Pesca e Aquicultura",
       "consulta": "\"Lula\" (\"Ministério da Pesca e Aquicultura\" OR \"Pesca e Aquicultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 7,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Pesca+e+Aquicultura%22+OR+%22Pesca+e+Aquic"
+      "falha": ""
     },
     {
       "orgao": "Ministério do Planejamento e Orçamento",
@@ -198,23 +205,23 @@
     {
       "orgao": "Ministério de Portos e Aeroportos",
       "consulta": "\"Lula\" (\"Ministério de Portos e Aeroportos\" OR \"Portos e Aeroportos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Aero"
     },
     {
       "orgao": "Ministério da Previdência Social",
       "consulta": "\"Lula\" (\"Ministério da Previdência Social\" OR \"Previdência Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+da+Previd%C3%AAncia+Social%22+OR+%22Previd%C3"
     },
     {
       "orgao": "Ministério dos Povos Indígenas",
       "consulta": "\"Lula\" (\"Ministério dos Povos Indígenas\" OR \"Povos Indígenas\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 23,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+dos+Povos+Ind%C3%ADgenas%22+OR+%22Povos+Ind%C"
     },
     {
       "orgao": "Ministério das Relações Exteriores",
@@ -233,9 +240,9 @@
     {
       "orgao": "Ministério do Trabalho e Emprego",
       "consulta": "\"Lula\" (\"Ministério do Trabalho e Emprego\" OR \"Trabalho e Emprego\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+do+Trabalho+e+Emprego%22+OR+%22Trabalho+e+Emp"
     },
     {
       "orgao": "Ministério dos Transportes",
@@ -247,7 +254,7 @@
     {
       "orgao": "Ministério do Turismo",
       "consulta": "\"Lula\" (\"Ministério do Turismo\" OR \"Turismo\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 23,
+      "encontradas": 20,
       "saturada": false,
       "falha": ""
     },
@@ -261,16 +268,16 @@
     {
       "orgao": "Casa Civil",
       "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 29,
+      "encontradas": 30,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Secretaria-Geral da Presidência da República",
       "consulta": "\"Lula\" (\"Secretaria-Geral da Presidência da República\" OR \"Secretaria-Geral da Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 5,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Secretaria-Geral+da+Presid%C3%AAncia+da+Rep%C3%BAblica%22+OR+"
     },
     {
       "orgao": "Secretaria de Relações Institucionais",
@@ -303,7 +310,7 @@
     {
       "orgao": "Controladoria-Geral da União",
       "consulta": "\"Lula\" (\"Controladoria-Geral da União\" OR \"Controladoria-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 10,
+      "encontradas": 9,
       "saturada": false,
       "falha": ""
     },
@@ -333,7 +340,7 @@
       "consulta": "\"Lula\" (\"Casa da Moeda do Brasil\" OR \"Casa da Moeda do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
       "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Casa+da+Moeda+do+Brasil%22+OR+%22Casa+da+Moeda+do+Brasil%22%2"
     },
     {
       "orgao": "BNDES",
@@ -352,9 +359,9 @@
     {
       "orgao": "Petrobras",
       "consulta": "\"Lula\" (\"Petrobras\" OR \"Petrobras\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 30,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Petrobras%22+OR+%22Petrobras%22%29+%28ministro+OR+cotado+OR+n"
     },
     {
       "orgao": "Eletronuclear",
@@ -366,9 +373,9 @@
     {
       "orgao": "ANEEL",
       "consulta": "\"Lula\" (\"ANEEL\" OR \"ANEEL\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 6,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANEEL%22+OR+%22ANEEL%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
     },
     {
       "orgao": "ANP",
@@ -380,9 +387,9 @@
     {
       "orgao": "ANM",
       "consulta": "\"Lula\" (\"ANM\" OR \"ANM\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 9,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ANM%22+OR+%22ANM%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7%C"
+      "falha": ""
     },
     {
       "orgao": "Anatel",
@@ -394,9 +401,9 @@
     {
       "orgao": "Correios",
       "consulta": "\"Lula\" (\"Correios\" OR \"Correios\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 24,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Correios%22+OR+%22Correios%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "Polícia Federal",
@@ -415,16 +422,16 @@
     {
       "orgao": "Senappen",
       "consulta": "\"Lula\" (\"Senappen\" OR \"Senappen\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 6,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Senappen%22+OR+%22Senappen%22%29+%28ministro+OR+cotado+OR+nom"
     },
     {
       "orgao": "Anvisa",
       "consulta": "\"Lula\" (\"Anvisa\" OR \"Anvisa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 24,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Anvisa%22+OR+%22Anvisa%22%29+%28ministro+OR+cotado+OR+nomea%C"
     },
     {
       "orgao": "ANS",
@@ -436,7 +443,7 @@
     {
       "orgao": "Fiocruz",
       "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 6,
+      "encontradas": 5,
       "saturada": false,
       "falha": ""
     },
@@ -450,16 +457,16 @@
     {
       "orgao": "Inep",
       "consulta": "\"Lula\" (\"Inep\" OR \"Inep\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 19,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Inep%22+OR+%22Inep%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "Capes",
       "consulta": "\"Lula\" (\"Capes\" OR \"Capes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 6,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Capes%22+OR+%22Capes%22%29+%28ministro+OR+cotado+OR+nomea%C3%"
+      "falha": ""
     },
     {
       "orgao": "Ancine",
@@ -492,14 +499,14 @@
     {
       "orgao": "DNIT",
       "consulta": "\"Lula\" (\"DNIT\" OR \"DNIT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 9,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Anac",
       "consulta": "\"Lula\" (\"Anac\" OR \"Anac\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 21,
       "saturada": false,
       "falha": ""
     },
@@ -520,16 +527,16 @@
     {
       "orgao": "Ibama",
       "consulta": "\"Lula\" (\"Ibama\" OR \"Ibama\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 17,
+      "encontradas": 16,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "ICMBio",
       "consulta": "\"Lula\" (\"ICMBio\" OR \"ICMBio\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 6,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22ICMBio%22+OR+%22ICMBio%22%29+%28ministro+OR+cotado+OR+nomea%C"
     },
     {
       "orgao": "IBGE",
@@ -555,7 +562,7 @@
     {
       "orgao": "Funai",
       "consulta": "\"Lula\" (\"Funai\" OR \"Funai\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 7,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
@@ -569,9 +576,9 @@
     {
       "orgao": "Dataprev",
       "consulta": "\"Lula\" (\"Dataprev\" OR \"Dataprev\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 4,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Dataprev%22+OR+%22Dataprev%22%29+%28ministro+OR+cotado+OR+nom"
+      "falha": ""
     },
     {
       "orgao": "Agência Brasileira de Inteligência",
@@ -583,9 +590,9 @@
     {
       "orgao": "Empresa Brasil de Comunicação",
       "consulta": "\"Lula\" (\"Empresa Brasil de Comunicação\" OR \"Empresa Brasil de Comunicação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 6,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Empresa+Brasil+de+Comunica%C3%A7%C3%A3o%22+OR+%22Empresa+Bras"
     },
     {
       "orgao": "Governo — busca geral",
@@ -597,9 +604,9 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministro\" \"indicação\"",
-      "encontradas": 25,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&c"
     },
     {
       "orgao": "Governo — busca geral",
@@ -611,9 +618,9 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"governo Lula\" \"nomeação\"",
-      "encontradas": 25,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22governo+Lula%22+%22nomea%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:p"
     },
     {
       "orgao": "Governo — busca geral",
@@ -625,16 +632,16 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"estatais\" \"presidência\"",
-      "encontradas": 0,
+      "encontradas": 3,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22estatais%22+%22presid%C3%AAncia%22+when%3A7d&hl=pt-BR&gl=BR&ceid"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"novo governo\" ministros",
-      "encontradas": 26,
+      "encontradas": 0,
       "saturada": false,
-      "falha": ""
+      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22novo+governo%22+ministros+when%3A7d&hl=pt-BR&gl=BR&ceid=BR:pt-41"
     },
     {
       "orgao": "Governo — busca geral",
@@ -646,7 +653,7 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"cotados\"",
-      "encontradas": 36,
+      "encontradas": 37,
       "saturada": false,
       "falha": ""
     },
