@@ -1,21 +1,16 @@
 {
-  "ultima_tentativa_utc": "2026-11-26T02:42:25+00:00",
-  "concluida_em_utc": "2026-11-26T02:42:31+00:00",
-  "ultima_coleta_sucesso_utc": "2026-11-26T02:42:31+00:00",
-  "ultima_coleta_completa_utc": "2026-11-26T01:36:36+00:00",
-  "ultima_noticia_encontrada_utc": "2026-11-26T02:42:31+00:00",
-  "ultima_publicacao_utc": "2026-11-26T02:32:18+00:00",
-  "novas_noticias": 44,
-  "total_armazenado": 14122,
+  "ultima_tentativa_utc": "2026-11-26T03:41:51+00:00",
+  "concluida_em_utc": "2026-11-26T03:41:59+00:00",
+  "ultima_coleta_sucesso_utc": "2026-11-26T03:41:59+00:00",
+  "ultima_coleta_completa_utc": "2026-11-26T03:41:59+00:00",
+  "ultima_noticia_encontrada_utc": "2026-11-26T03:41:59+00:00",
+  "ultima_publicacao_utc": "2026-11-26T03:26:34+00:00",
+  "novas_noticias": 33,
+  "total_armazenado": 14155,
   "orgaos_consultados": 79,
   "consultas": 89,
-  "consultas_com_sucesso": 85,
-  "falhas": [
-    "Ministério de Portos e Aeroportos: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Aero",
-    "IBGE: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22IBGE%22+OR+%22IBGE%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7",
-    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&c",
-    "Governo — busca geral: HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22composi%C3%A7%C3%A3o+do+governo%22+when%3A7d&hl=pt-BR&gl=BR&ceid"
-  ],
+  "consultas_com_sucesso": 89,
+  "falhas": [],
   "consultas_saturadas": 1,
   "detalhes_consultas": [
     {
@@ -28,7 +23,7 @@
     {
       "orgao": "Ministério das Cidades",
       "consulta": "\"Lula\" (\"Ministério das Cidades\" OR \"Cidades\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 31,
+      "encontradas": 32,
       "saturada": false,
       "falha": ""
     },
@@ -42,14 +37,14 @@
     {
       "orgao": "Ministério das Comunicações",
       "consulta": "\"Lula\" (\"Ministério das Comunicações\" OR \"Comunicações\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 26,
+      "encontradas": 44,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério da Cultura",
       "consulta": "\"Lula\" (\"Ministério da Cultura\" OR \"Cultura\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 32,
+      "encontradas": 62,
       "saturada": false,
       "falha": ""
     },
@@ -63,7 +58,7 @@
     {
       "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "consulta": "\"Lula\" (\"Ministério do Desenvolvimento Agrário e Agricultura Familiar\" OR \"Desenvolvimento Agrário e Agricultura Familiar\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 12,
+      "encontradas": 51,
       "saturada": false,
       "falha": ""
     },
@@ -98,14 +93,14 @@
     {
       "orgao": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",
       "consulta": "\"Lula\" (\"Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\" OR \"Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 9,
+      "encontradas": 49,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério do Esporte",
       "consulta": "\"Lula\" (\"Ministério do Esporte\" OR \"Esporte\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 31,
+      "encontradas": 70,
       "saturada": false,
       "falha": ""
     },
@@ -126,7 +121,7 @@
     {
       "orgao": "Ministério da Igualdade Racial",
       "consulta": "\"Lula\" (\"Ministério da Igualdade Racial\" OR \"Igualdade Racial\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 22,
+      "encontradas": 43,
       "saturada": false,
       "falha": ""
     },
@@ -140,7 +135,7 @@
     {
       "orgao": "Ministério da Justiça e Segurança Pública",
       "consulta": "\"Lula\" (\"Ministério da Justiça e Segurança Pública\" OR \"Justiça e Segurança Pública\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 33,
+      "encontradas": 35,
       "saturada": false,
       "falha": ""
     },
@@ -154,7 +149,7 @@
     {
       "orgao": "Ministério de Minas e Energia",
       "consulta": "\"Lula\" (\"Ministério de Minas e Energia\" OR \"Minas e Energia\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 22,
+      "encontradas": 42,
       "saturada": false,
       "falha": ""
     },
@@ -182,9 +177,9 @@
     {
       "orgao": "Ministério de Portos e Aeroportos",
       "consulta": "\"Lula\" (\"Ministério de Portos e Aeroportos\" OR \"Portos e Aeroportos\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 17,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22Minist%C3%A9rio+de+Portos+e+Aeroportos%22+OR+%22Portos+e+Aero"
+      "falha": ""
     },
     {
       "orgao": "Ministério da Previdência Social",
@@ -203,7 +198,7 @@
     {
       "orgao": "Ministério das Relações Exteriores",
       "consulta": "\"Lula\" (\"Ministério das Relações Exteriores\" OR \"Relações Exteriores\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 53,
+      "encontradas": 52,
       "saturada": false,
       "falha": ""
     },
@@ -217,21 +212,21 @@
     {
       "orgao": "Ministério do Trabalho e Emprego",
       "consulta": "\"Lula\" (\"Ministério do Trabalho e Emprego\" OR \"Trabalho e Emprego\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 24,
+      "encontradas": 54,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério dos Transportes",
       "consulta": "\"Lula\" (\"Ministério dos Transportes\" OR \"Transportes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 25,
+      "encontradas": 24,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Ministério do Turismo",
       "consulta": "\"Lula\" (\"Ministério do Turismo\" OR \"Turismo\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 68,
+      "encontradas": 29,
       "saturada": false,
       "falha": ""
     },
@@ -245,35 +240,35 @@
     {
       "orgao": "Casa Civil",
       "consulta": "\"Lula\" (\"Casa Civil\" OR \"Casa Civil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 71,
+      "encontradas": 51,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Secretaria-Geral da Presidência da República",
       "consulta": "\"Lula\" (\"Secretaria-Geral da Presidência da República\" OR \"Secretaria-Geral da Presidência da República\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 12,
+      "encontradas": 10,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Secretaria de Relações Institucionais",
       "consulta": "\"Lula\" (\"Secretaria de Relações Institucionais\" OR \"Secretaria de Relações Institucionais\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 32,
+      "encontradas": 33,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Secretaria de Comunicação Social",
       "consulta": "\"Lula\" (\"Secretaria de Comunicação Social\" OR \"Secretaria de Comunicação Social\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 44,
+      "encontradas": 45,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Gabinete de Segurança Institucional",
       "consulta": "\"Lula\" (\"Gabinete de Segurança Institucional\" OR \"Gabinete de Segurança Institucional\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 10,
+      "encontradas": 9,
       "saturada": false,
       "falha": ""
     },
@@ -287,21 +282,21 @@
     {
       "orgao": "Controladoria-Geral da União",
       "consulta": "\"Lula\" (\"Controladoria-Geral da União\" OR \"Controladoria-Geral da União\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 12,
+      "encontradas": 7,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Banco do Brasil",
       "consulta": "\"Lula\" (\"Banco do Brasil\" OR \"Banco do Brasil\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 19,
+      "encontradas": 37,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Caixa Econômica Federal",
       "consulta": "\"Lula\" (\"Caixa Econômica Federal\" OR \"Caixa Econômica Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 18,
+      "encontradas": 40,
       "saturada": false,
       "falha": ""
     },
@@ -322,7 +317,7 @@
     {
       "orgao": "BNDES",
       "consulta": "\"Lula\" (\"BNDES\" OR \"BNDES\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 49,
+      "encontradas": 48,
       "saturada": false,
       "falha": ""
     },
@@ -336,14 +331,14 @@
     {
       "orgao": "Petrobras",
       "consulta": "\"Lula\" (\"Petrobras\" OR \"Petrobras\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 17,
+      "encontradas": 47,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Eletronuclear",
       "consulta": "\"Lula\" (\"Eletronuclear\" OR \"Eletronuclear\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 8,
+      "encontradas": 6,
       "saturada": false,
       "falha": ""
     },
@@ -364,21 +359,21 @@
     {
       "orgao": "ANM",
       "consulta": "\"Lula\" (\"ANM\" OR \"ANM\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 8,
+      "encontradas": 16,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Anatel",
       "consulta": "\"Lula\" (\"Anatel\" OR \"Anatel\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 8,
+      "encontradas": 9,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Correios",
       "consulta": "\"Lula\" (\"Correios\" OR \"Correios\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 14,
+      "encontradas": 51,
       "saturada": false,
       "falha": ""
     },
@@ -392,7 +387,7 @@
     {
       "orgao": "Polícia Rodoviária Federal",
       "consulta": "\"Lula\" (\"Polícia Rodoviária Federal\" OR \"Polícia Rodoviária Federal\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 13,
+      "encontradas": 18,
       "saturada": false,
       "falha": ""
     },
@@ -406,7 +401,7 @@
     {
       "orgao": "Anvisa",
       "consulta": "\"Lula\" (\"Anvisa\" OR \"Anvisa\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 62,
+      "encontradas": 31,
       "saturada": false,
       "falha": ""
     },
@@ -420,7 +415,7 @@
     {
       "orgao": "Fiocruz",
       "consulta": "\"Lula\" (\"Fiocruz\" OR \"Fiocruz\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 23,
+      "encontradas": 26,
       "saturada": false,
       "falha": ""
     },
@@ -434,14 +429,14 @@
     {
       "orgao": "Inep",
       "consulta": "\"Lula\" (\"Inep\" OR \"Inep\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 5,
+      "encontradas": 6,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Capes",
       "consulta": "\"Lula\" (\"Capes\" OR \"Capes\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 4,
+      "encontradas": 3,
       "saturada": false,
       "falha": ""
     },
@@ -476,7 +471,7 @@
     {
       "orgao": "DNIT",
       "consulta": "\"Lula\" (\"DNIT\" OR \"DNIT\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 12,
+      "encontradas": 13,
       "saturada": false,
       "falha": ""
     },
@@ -504,7 +499,7 @@
     {
       "orgao": "Ibama",
       "consulta": "\"Lula\" (\"Ibama\" OR \"Ibama\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 21,
+      "encontradas": 17,
       "saturada": false,
       "falha": ""
     },
@@ -518,14 +513,14 @@
     {
       "orgao": "IBGE",
       "consulta": "\"Lula\" (\"IBGE\" OR \"IBGE\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 0,
+      "encontradas": 29,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%28%22IBGE%22+OR+%22IBGE%22%29+%28ministro+OR+cotado+OR+nomea%C3%A7"
+      "falha": ""
     },
     {
       "orgao": "Ipea",
       "consulta": "\"Lula\" (\"Ipea\" OR \"Ipea\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 5,
+      "encontradas": 6,
       "saturada": false,
       "falha": ""
     },
@@ -539,14 +534,14 @@
     {
       "orgao": "Funai",
       "consulta": "\"Lula\" (\"Funai\" OR \"Funai\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 18,
+      "encontradas": 40,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Serpro",
       "consulta": "\"Lula\" (\"Serpro\" OR \"Serpro\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 7,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
@@ -567,23 +562,23 @@
     {
       "orgao": "Empresa Brasil de Comunicação",
       "consulta": "\"Lula\" (\"Empresa Brasil de Comunicação\" OR \"Empresa Brasil de Comunicação\") (ministro OR cotado OR nomeação OR convite OR presidência OR indicação OR governo)",
-      "encontradas": 10,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministério\" \"nome\"",
-      "encontradas": 52,
+      "encontradas": 29,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"ministro\" \"indicação\"",
-      "encontradas": 0,
+      "encontradas": 26,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22ministro%22+%22indica%C3%A7%C3%A3o%22+when%3A7d&hl=pt-BR&gl=BR&c"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
@@ -595,49 +590,49 @@
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"governo Lula\" \"nomeação\"",
-      "encontradas": 25,
+      "encontradas": 41,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"composição do governo\"",
-      "encontradas": 0,
+      "encontradas": 18,
       "saturada": false,
-      "falha": "HTTPError: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Lula%22+%22composi%C3%A7%C3%A3o+do+governo%22+when%3A7d&hl=pt-BR&gl=BR&ceid"
+      "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"estatais\" \"presidência\"",
-      "encontradas": 7,
+      "encontradas": 8,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"novo governo\" ministros",
-      "encontradas": 47,
+      "encontradas": 46,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"reforma ministerial\"",
-      "encontradas": 12,
+      "encontradas": 23,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"cotados\"",
-      "encontradas": 47,
+      "encontradas": 42,
       "saturada": false,
       "falha": ""
     },
     {
       "orgao": "Governo — busca geral",
       "consulta": "\"Lula\" \"equipe ministerial\"",
-      "encontradas": 46,
+      "encontradas": 47,
       "saturada": false,
       "falha": ""
     }
